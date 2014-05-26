@@ -85,7 +85,7 @@ GameObject:
   - 131: {fileID: 239436551}
   - 114: {fileID: 239436550}
   m_Layer: 0
-  m_Name: Button-Down
+  m_Name: Button-Up
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
