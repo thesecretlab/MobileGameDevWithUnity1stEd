@@ -9,15 +9,12 @@ public class Swinging : MonoBehaviour {
 
 	void FixedUpdate() {
 		// get the swing amount
-
 		float swing = InputManager.instance.sidewaysMotion;
 
 		// calculate a force
-
 		Vector2 force = new Vector2(swing * swingSensitivity, 0);
 
 		// apply the force to the rigidbody
-
 		rigidbody2D.AddForce(force);
 	}
 
