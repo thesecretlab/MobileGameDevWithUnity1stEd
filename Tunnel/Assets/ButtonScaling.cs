@@ -20,8 +20,4 @@ public class ButtonScaling : MonoBehaviour {
 
 	}
 
-	void OnMouseDown() {
-		Debug.Log("Hi");
-	}
-
 }

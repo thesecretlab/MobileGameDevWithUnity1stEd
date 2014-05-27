@@ -84,6 +84,7 @@ GameObject:
   - 4: {fileID: 239436552}
   - 131: {fileID: 239436551}
   - 114: {fileID: 239436550}
+  - 114: {fileID: 239436553}
   m_Layer: 0
   m_Name: Button-Up
   m_TagString: Untagged
@@ -132,6 +133,20 @@ Transform:
   m_LocalScale: {x: 0, y: 0, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
+--- !u!114 &239436553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 239436549}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5982580de64284c5b8ef6d67e27ea3b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 1538698777}
+  mouseDownMessage: StartDecreasingLength
+  mouseUpMessage: StopDecreasingLength
 --- !u!1 &403363922
 GameObject:
   m_ObjectHideFlags: 0
@@ -202,9 +217,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5982580de64284c5b8ef6d67e27ea3b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  mouseDownMessage: 
-  mouseUpMessage: 
+  target: {fileID: 1538698777}
+  mouseDownMessage: StartIncreasingLength
+  mouseUpMessage: StopIncreasingLength
 --- !u!1 &549751643
 GameObject:
   m_ObjectHideFlags: 0
@@ -436,8 +451,9 @@ GameObject:
   m_Component:
   - 4: {fileID: 1538698779}
   - 50: {fileID: 1538698778}
+  - 114: {fileID: 1538698780}
   m_Layer: 0
-  m_Name: Anchor
+  m_Name: Rope
   m_TagString: Untagged
   m_Icon: {fileID: -1203168336, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -469,6 +485,17 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
+--- !u!114 &1538698780
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1538698777}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c581a5dc4a0dc46f2959c9eaedd26382, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1572054037
 GameObject:
   m_ObjectHideFlags: 0

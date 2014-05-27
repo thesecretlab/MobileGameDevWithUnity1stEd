@@ -14,7 +14,7 @@ public class ButtonClicking : MonoBehaviour {
 	}
 
 	void OnMouseUp() {
-		if (mouseDownMessage != null)
-			target.SendMessage(mouseDownMessage, SendMessageOptions.RequireReceiver);
+		if (mouseUpMessage != null)
+			target.SendMessage(mouseUpMessage, SendMessageOptions.RequireReceiver);
 	}
 }
