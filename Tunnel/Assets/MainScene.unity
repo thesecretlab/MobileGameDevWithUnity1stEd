@@ -311,8 +311,8 @@ GameObject:
   - 58: {fileID: 1148849678}
   - 50: {fileID: 1148849677}
   - 212: {fileID: 1148849679}
-  - 232: {fileID: 1148849680}
   - 114: {fileID: 1148849682}
+  - 232: {fileID: 1148849680}
   m_Layer: 0
   m_Name: Gnome
   m_TagString: Untagged
@@ -380,7 +380,7 @@ DistanceJoint2D:
   m_ConnectedRigidBody: {fileID: 1538698778}
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
-  m_Distance: 7
+  m_Distance: 1
 --- !u!4 &1148849681
 Transform:
   m_ObjectHideFlags: 0
@@ -496,6 +496,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c581a5dc4a0dc46f2959c9eaedd26382, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  connectedObject: {fileID: 1148849677}
+  maxRopeSegmentLength: 1
+  ropeSegmentPrefab: {fileID: 100000, guid: ca0f875a193834390b4b9deb5f94f336, type: 2}
 --- !u!1 &1572054037
 GameObject:
   m_ObjectHideFlags: 0
