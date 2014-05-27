@@ -28,6 +28,19 @@ public class Rope : MonoBehaviour {
 
 	}
 
+	public void Reset() {
+
+		foreach (GameObject segment in ropeSegments) {
+			Destroy (segment);
+
+		}
+
+		ropeSegments = new List<GameObject>();
+
+		CreateRopeSegment();
+
+	}
+
 	void CreateRopeSegment() {
 		// Create a rope segment for the gnome
 		

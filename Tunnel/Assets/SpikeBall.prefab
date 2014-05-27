@@ -106,7 +106,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b3b182163bb4441c9ee46506749e19e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  messageOnTouch: 
+  messageOnTouch: TrapTouched
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1

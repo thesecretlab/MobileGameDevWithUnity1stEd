@@ -18,7 +18,15 @@ public class GameManager : MonoBehaviour {
 	
 	public GameObject gnome;
 
+	public GameObject startingPoint;
+
+	public Rope rope;
+
 	bool treasureCollected = false;
+
+	void Start() {
+		Reset ();
+	}
 
 	void TreasureCollected() {
 		treasureCollected = true;
@@ -28,6 +36,14 @@ public class GameManager : MonoBehaviour {
 	void Reset() {
 		treasureCollected = false;
 		treasure.SetActive(true);
+
+		gnome.transform.position = startingPoint.transform.position;
+
+		rope.Reset();
+	}
+
+	void TrapTouched() {
+		Reset ();
 	}
 
 	void ExitReached() {
