@@ -15,12 +15,10 @@ public class GameManager : MonoBehaviour {
 	}
 
 	public GameObject treasure;
-	
 	public GameObject gnome;
-
 	public GameObject startingPoint;
-
 	public Rope rope;
+	public Fade fade;
 
 	bool treasureCollected = false;
 
@@ -40,9 +38,13 @@ public class GameManager : MonoBehaviour {
 		gnome.transform.position = startingPoint.transform.position;
 
 		rope.Reset();
+
+		fade.SetAlpha(1.0f);
+		fade.FadeTo(0.0f, 0.5f);
 	}
 
 	void TrapTouched() {
+
 		Reset ();
 	}
 
