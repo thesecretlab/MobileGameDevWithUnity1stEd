@@ -92,16 +92,27 @@ public class Rope : MonoBehaviour {
 	}
 
 	void Update() {
+
+		GameObject topSegment = ropeSegments[0];
+		
+		DistanceJoint2D topSegmentJoint = topSegment.GetComponent<DistanceJoint2D>();
+		
 		if (isIncreasing) {
-
-			GameObject topSegment = ropeSegments[0];
-
-			DistanceJoint2D topSegmentJoint = topSegment.GetComponent<DistanceJoint2D>();
 
 			if (topSegmentJoint.distance >= maxRopeSegmentLength) {
 				CreateRopeSegment();
 			} else {
 				topSegmentJoint.distance += ropeSpeed * Time.deltaTime;
+			}
+
+		}
+
+		if (isDecreasing) {
+
+			if (topSegmentJoint.distance <= 0.005f) {
+				RemoveRopeSegment();
+			} else {
+				topSegmentJoint.distance -= ropeSpeed * Time.deltaTime;
 			}
 
 		}
