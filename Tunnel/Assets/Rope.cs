@@ -18,7 +18,11 @@ public class Rope : MonoBehaviour {
 
 	public float ropeSpeed = 1.0f;
 
+	LineRenderer lineRenderer;
+
 	void Start() {
+
+		lineRenderer = GetComponent<LineRenderer>();
 
 		CreateRopeSegment();
 
@@ -116,6 +120,18 @@ public class Rope : MonoBehaviour {
 			}
 
 		}
+
+		// Update the line renderer
+		lineRenderer.SetVertexCount(ropeSegments.Count + 2);
+
+		lineRenderer.SetPosition(0, this.transform.position);
+
+		for (int i = 0; i < ropeSegments.Count; i++) {
+			lineRenderer.SetPosition(i+1, ropeSegments[i].transform.position);
+		}
+
+		lineRenderer.SetPosition(ropeSegments.Count + 1, connectedObject.transform.position);
+
 	}
 
 	public void StartIncreasingLength() {
