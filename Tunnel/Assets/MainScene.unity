@@ -325,6 +325,7 @@ GameObject:
   - 4: {fileID: 596246454}
   - 212: {fileID: 596246453}
   - 61: {fileID: 596246455}
+  - 114: {fileID: 596246456}
   m_Layer: 0
   m_Name: MoneyPile
   m_TagString: Untagged
@@ -377,6 +378,17 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_Size: {x: 5.11999989, y: 2.55999994}
   m_Center: {x: 0, y: 0}
+--- !u!114 &596246456
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 596246452}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b3b182163bb4441c9ee46506749e19e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &871344430
 GameObject:
   m_ObjectHideFlags: 0
@@ -541,7 +553,7 @@ GameObject:
   - 232: {fileID: 1148849680}
   m_Layer: 0
   m_Name: Gnome
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 266726316, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
