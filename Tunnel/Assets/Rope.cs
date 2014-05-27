@@ -19,6 +19,8 @@ public class Rope : MonoBehaviour {
 	void Start() {
 
 		CreateRopeSegment();
+		CreateRopeSegment();
+		CreateRopeSegment();
 
 	}
 
@@ -40,7 +42,7 @@ public class Rope : MonoBehaviour {
 		}
 		
 		// now that it's checked, add it to the list of rope segments
-		ropeSegments.Add(segment);
+		ropeSegments.Insert(0, segment);
 		
 		// If this is the FIRST segment, it needs to be connected to the gnome
 		
@@ -49,8 +51,16 @@ public class Rope : MonoBehaviour {
 			DistanceJoint2D connectedObjectJoint = connectedObject.GetComponent<DistanceJoint2D>();
 			
 			connectedObjectJoint.connectedBody = segmentBody;
+			connectedObjectJoint.distance = maxRopeSegmentLength;
+		} else {
+			// we now need to connect the former top segment to this one
+			GameObject nextSegment = ropeSegments[1];
+			DistanceJoint2D nextSegmentJoint = nextSegment.GetComponent<DistanceJoint2D>();
+
+			nextSegmentJoint.connectedBody = segmentBody;
+
 		}
-		
+
 		// Connect the segment to the rope anchor (ie this object)
 		segmentJoint.connectedBody = this.rigidbody2D;
 		
