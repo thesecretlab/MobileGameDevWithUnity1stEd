@@ -5,13 +5,21 @@ public class SignalOnTouch : MonoBehaviour {
 
 	public string messageOnTouch;
 
-	void OnTriggerEnter2D(Collider2D collider) {
-		if (collider.gameObject.CompareTag("Player")) {
-
+	void SendSignal(GameObject objectThatHit) {
+		if (objectThatHit.CompareTag("Player")) {
+			
 			if (messageOnTouch != null) {
 				GameManager.instance.SendMessage(messageOnTouch, this.gameObject);
 			}
-
+			
 		}
+	}
+
+	void OnTriggerEnter2D(Collider2D collider) {
+		SendSignal (collider.gameObject);
+	}
+
+	void OnCollisionEnter2D(Collision2D collision) {
+		SendSignal (collision.gameObject);
 	}
 }
