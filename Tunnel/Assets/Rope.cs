@@ -16,10 +16,10 @@ public class Rope : MonoBehaviour {
 
 	public GameObject ropeSegmentPrefab;
 
+	public float ropeSpeed = 1.0f;
+
 	void Start() {
 
-		CreateRopeSegment();
-		CreateRopeSegment();
 		CreateRopeSegment();
 
 	}
@@ -27,7 +27,7 @@ public class Rope : MonoBehaviour {
 	void CreateRopeSegment() {
 		// Create a rope segment for the gnome
 		
-		GameObject segment = (GameObject)Instantiate(ropeSegmentPrefab, connectedObject.transform.position, Quaternion.identity);
+		GameObject segment = (GameObject)Instantiate(ropeSegmentPrefab,  this.transform.position, Quaternion.identity);
 		
 		// Get the rigidbody from the segment
 		Rigidbody2D segmentBody = segment.GetComponent<Rigidbody2D>();
@@ -52,6 +52,9 @@ public class Rope : MonoBehaviour {
 			
 			connectedObjectJoint.connectedBody = segmentBody;
 			connectedObjectJoint.distance = maxRopeSegmentLength;
+
+			// Set this joint to already be at the max length
+			segmentJoint.distance = maxRopeSegmentLength;
 		} else {
 			// we now need to connect the former top segment to this one
 			GameObject nextSegment = ropeSegments[1];
@@ -59,13 +62,49 @@ public class Rope : MonoBehaviour {
 
 			nextSegmentJoint.connectedBody = segmentBody;
 
+			segmentJoint.distance = 0.0f;
 		}
 
 		// Connect the segment to the rope anchor (ie this object)
 		segmentJoint.connectedBody = this.rigidbody2D;
 		
-		// FIXME: temporarily using default segment length
-		segmentJoint.distance = maxRopeSegmentLength;
+
+
+	}
+
+
+	void RemoveRopeSegment() {
+		// if we only have one segment, abort
+		if (ropeSegments.Count <= 1)
+			return;
+
+		GameObject topSegment = ropeSegments[0];
+		GameObject nextSegment = ropeSegments[1];
+
+		DistanceJoint2D nextSegmentJoint = nextSegment.GetComponent<DistanceJoint2D>();
+
+		nextSegmentJoint.connectedBody = this.rigidbody2D;
+
+		ropeSegments.RemoveAt(0);
+
+		Destroy (topSegment);
+
+	}
+
+	void Update() {
+		if (isIncreasing) {
+
+			GameObject topSegment = ropeSegments[0];
+
+			DistanceJoint2D topSegmentJoint = topSegment.GetComponent<DistanceJoint2D>();
+
+			if (topSegmentJoint.distance >= maxRopeSegmentLength) {
+				CreateRopeSegment();
+			} else {
+				topSegmentJoint.distance += ropeSpeed * Time.deltaTime;
+			}
+
+		}
 	}
 
 	public void StartIncreasingLength() {
