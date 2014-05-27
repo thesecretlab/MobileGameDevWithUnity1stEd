@@ -270,7 +270,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: .192156866, g: .301960796, b: .474509805, a: .0196078438}
+  m_BackGroundColor: {r: .411764711, g: .411764711, b: .411764711, a: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -324,6 +324,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 596246454}
   - 212: {fileID: 596246453}
+  - 61: {fileID: 596246455}
   m_Layer: 0
   m_Name: MoneyPile
   m_TagString: Untagged
@@ -350,7 +351,7 @@ SpriteRenderer:
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 5
   m_SortingLayerID: 0
   m_Sprite: {fileID: 21300000, guid: 109f50b3558054ab3814e74ff84d7c0f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -365,6 +366,17 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
+--- !u!61 &596246455
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 596246452}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Size: {x: 5.11999989, y: 2.55999994}
+  m_Center: {x: 0, y: 0}
 --- !u!1 &871344430
 GameObject:
   m_ObjectHideFlags: 0
@@ -540,7 +552,7 @@ Rigidbody2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1148849676}
-  m_Mass: .200000003
+  m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: .0500000007
   m_GravityScale: 1
