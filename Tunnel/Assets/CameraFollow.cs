@@ -18,7 +18,7 @@ public class CameraFollow : MonoBehaviour {
 
 	}
 
-	void OnDrawGizmos() {
+	void OnDrawGizmosSelected() {
 		Gizmos.color = Color.yellow;
 
 		Vector3 topPoint = new Vector3(this.transform.position.x, topLimit, this.transform.position.z);
