@@ -55,7 +55,7 @@ public class Rope : MonoBehaviour {
 			DistanceJoint2D connectedObjectJoint = connectedObject.GetComponent<DistanceJoint2D>();
 			
 			connectedObjectJoint.connectedBody = segmentBody;
-			connectedObjectJoint.distance = maxRopeSegmentLength;
+			connectedObjectJoint.distance = 0.1f;
 
 			// Set this joint to already be at the max length
 			segmentJoint.distance = maxRopeSegmentLength;
