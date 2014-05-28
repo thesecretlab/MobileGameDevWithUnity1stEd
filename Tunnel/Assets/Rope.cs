@@ -50,7 +50,7 @@ public class Rope : MonoBehaviour {
 		Rigidbody2D segmentBody = segment.GetComponent<Rigidbody2D>();
 		
 		// Get the distance joint from the segment
-		DistanceJoint2D segmentJoint = segment.GetComponent<DistanceJoint2D>();
+		SpringJoint2D segmentJoint = segment.GetComponent<SpringJoint2D>();
 		
 		// Error if it doesn't have a rigidbody or joint
 		if (segmentBody == null || segmentJoint == null) {
@@ -65,7 +65,7 @@ public class Rope : MonoBehaviour {
 		
 		if (ropeSegments.Count == 1) {
 			// Connect the joint on the connected object to the segment
-			DistanceJoint2D connectedObjectJoint = connectedObject.GetComponent<DistanceJoint2D>();
+			SpringJoint2D connectedObjectJoint = connectedObject.GetComponent<SpringJoint2D>();
 			
 			connectedObjectJoint.connectedBody = segmentBody;
 			connectedObjectJoint.distance = 0.1f;
@@ -75,7 +75,7 @@ public class Rope : MonoBehaviour {
 		} else {
 			// we now need to connect the former top segment to this one
 			GameObject nextSegment = ropeSegments[1];
-			DistanceJoint2D nextSegmentJoint = nextSegment.GetComponent<DistanceJoint2D>();
+			SpringJoint2D nextSegmentJoint = nextSegment.GetComponent<SpringJoint2D>();
 
 			nextSegmentJoint.connectedBody = segmentBody;
 
@@ -98,7 +98,7 @@ public class Rope : MonoBehaviour {
 		GameObject topSegment = ropeSegments[0];
 		GameObject nextSegment = ropeSegments[1];
 
-		DistanceJoint2D nextSegmentJoint = nextSegment.GetComponent<DistanceJoint2D>();
+		SpringJoint2D nextSegmentJoint = nextSegment.GetComponent<SpringJoint2D>();
 
 		nextSegmentJoint.connectedBody = this.rigidbody2D;
 
@@ -112,7 +112,7 @@ public class Rope : MonoBehaviour {
 
 		GameObject topSegment = ropeSegments[0];
 		
-		DistanceJoint2D topSegmentJoint = topSegment.GetComponent<DistanceJoint2D>();
+		SpringJoint2D topSegmentJoint = topSegment.GetComponent<SpringJoint2D>();
 		
 		if (isIncreasing) {
 

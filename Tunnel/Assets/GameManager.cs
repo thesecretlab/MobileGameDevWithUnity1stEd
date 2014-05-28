@@ -39,6 +39,8 @@ public class GameManager : MonoBehaviour {
 
 		rope.Reset();
 
+		fade.gameObject.SetActive(true);
+
 		fade.SetAlpha(1.0f);
 		fade.FadeTo(0.0f, 0.5f);
 	}
