@@ -21,6 +21,7 @@ public class GameManager : MonoBehaviour {
 	public Fade fade;
 	public GameObject mainMenu;
 	public GameObject completeMenu;
+	public GameObject treasureInHand;
 
 	bool treasureCollected = false;
 
@@ -31,6 +32,7 @@ public class GameManager : MonoBehaviour {
 	void TreasureCollected() {
 		treasureCollected = true;
 		treasure.SetActive(false);
+		treasureInHand.SetActive(true);
 	}
 
 	void Reset() {
@@ -48,6 +50,8 @@ public class GameManager : MonoBehaviour {
 
 		mainMenu.SetActive(false);
 		completeMenu.SetActive(false);
+
+		treasureInHand.SetActive(false);
 
 		Time.timeScale = 1.0f;
 	}
