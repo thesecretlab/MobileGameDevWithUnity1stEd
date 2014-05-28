@@ -15,13 +15,17 @@ public class GameManager : MonoBehaviour {
 	}
 
 	public GameObject treasure;
-	public GameObject gnome;
 	public GameObject startingPoint;
 	public Rope rope;
 	public Fade fade;
 	public GameObject mainMenu;
 	public GameObject completeMenu;
-	public GameObject treasureInHand;
+
+	public CameraFollow cameraFollow;
+
+	GnomeComponents currentGnome;
+
+	public GameObject gnomePrefab;
 
 	bool treasureCollected = false;
 
@@ -32,16 +36,35 @@ public class GameManager : MonoBehaviour {
 	void TreasureCollected() {
 		treasureCollected = true;
 		treasure.SetActive(false);
-		treasureInHand.SetActive(true);
+
+		currentGnome.treasure.SetActive(true);
+	}
+
+	void CreateNewGnome() {
+
+		// if we have a current gnome, make that no longer be the player
+		if (currentGnome != null) {
+			currentGnome.gameObject.tag = null;
+		}
+
+		GameObject newGnome = (GameObject)Instantiate(gnomePrefab);
+		currentGnome = newGnome.GetComponent<GnomeComponents>();
+		
+		currentGnome.transform.position = startingPoint.transform.position;
+		
+		rope.connectedObject = currentGnome.ropeBody;
+
+		cameraFollow.target = newGnome;
+		
+		rope.Reset();
+
 	}
 
 	void Reset() {
 		treasureCollected = false;
 		treasure.SetActive(true);
 
-		gnome.transform.position = startingPoint.transform.position;
-
-		rope.Reset();
+		CreateNewGnome();
 
 		fade.gameObject.SetActive(true);
 
@@ -51,13 +74,13 @@ public class GameManager : MonoBehaviour {
 		mainMenu.SetActive(false);
 		completeMenu.SetActive(false);
 
-		treasureInHand.SetActive(false);
+		currentGnome.treasure.SetActive(false);
 
 		Time.timeScale = 1.0f;
 	}
 
 	void TrapTouched() {
-
+		currentGnome.DestroyGnome();
 		Reset ();
 	}
 
