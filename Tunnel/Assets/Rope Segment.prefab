@@ -57,7 +57,7 @@ SpringJoint2D:
   m_ConnectedAnchor: {x: 0, y: 0}
   m_Distance: 1
   m_DampingRatio: 1
-  m_Frequency: 5
+  m_Frequency: 30
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
