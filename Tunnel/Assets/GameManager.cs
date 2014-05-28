@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviour {
 	public Rope rope;
 	public Fade fade;
 	public GameObject mainMenu;
+	public GameObject completeMenu;
 
 	bool treasureCollected = false;
 
@@ -46,6 +47,7 @@ public class GameManager : MonoBehaviour {
 		fade.FadeTo(0.0f, 0.5f);
 
 		mainMenu.SetActive(false);
+		completeMenu.SetActive(false);
 
 		Time.timeScale = 1.0f;
 	}
@@ -57,8 +59,13 @@ public class GameManager : MonoBehaviour {
 
 	void ExitReached() {
 		if (treasureCollected == true) {
-			Reset();
+			ShowCompleteMenu();
 		}
+	}
+
+	void ShowCompleteMenu() {
+		Time.timeScale = 0.0f;
+		completeMenu.SetActive(true);
 	}
 
 	void ShowMenu() {
