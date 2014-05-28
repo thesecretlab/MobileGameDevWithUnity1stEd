@@ -1643,7 +1643,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 69686b0ae7c82474bab32fb8b7185a97, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6000000, guid: 69686b0ae7c82474bab32fb8b7185a97, type: 2}
       propertyPath: m_Poly.m_Paths.Array.data[0].Array.data[8].x
@@ -1669,7 +1669,8 @@ Prefab:
       propertyPath: m_Poly.m_Paths.Array.data[0].Array.data[50].y
       value: -1.25999999
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6000000, guid: 69686b0ae7c82474bab32fb8b7185a97, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 69686b0ae7c82474bab32fb8b7185a97, type: 2}
   m_RootGameObject: {fileID: 1433835111}
   m_IsPrefabParent: 0
@@ -1809,8 +1810,9 @@ GameObject:
   m_Component:
   - 4: {fileID: 1433835115}
   - 212: {fileID: 1433835114}
-  - 60: {fileID: 1433835113}
   - 114: {fileID: 1433835112}
+  - 58: {fileID: 1433835116}
+  - 111: {fileID: 1433835113}
   m_Layer: 0
   m_Name: SpikeBall
   m_TagString: Untagged
@@ -1831,73 +1833,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   messageOnTouch: TrapTouched
---- !u!60 &1433835113
-PolygonCollider2D:
+--- !u!111 &1433835113
+Animation:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 6000000, guid: 69686b0ae7c82474bab32fb8b7185a97,
-    type: 2}
-  m_PrefabInternal: {fileID: 1179356350}
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1433835111}
   m_Enabled: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Poly:
-    m_Paths:
-    - - {x: .789999962, y: -.889999986}
-      - {x: .889999986, y: -.909999967}
-      - {x: .909999967, y: -.879999995}
-      - {x: .819999993, y: -.579999983}
-      - {x: .789999962, y: -.449999988}
-      - {x: .889999986, y: -.239999995}
-      - {x: 1.00999999, y: -.179999992}
-      - {x: 1.25999999, y: -.0199999996}
-      - {x: 1.25999999, y: .0199999996}
-      - {x: 1.13999999, y: .099999994}
-      - {x: .889999986, y: .239999995}
-      - {x: .859999955, y: .349999994}
-      - {x: .789999962, y: .449999988}
-      - {x: .889999986, y: .819999993}
-      - {x: .899999976, y: .879999995}
-      - {x: .889999986, y: .909999967}
-      - {x: .75999999, y: .889999986}
-      - {x: .459999979, y: .789999962}
-      - {x: .329999983, y: .859999955}
-      - {x: .219999999, y: .939999998}
-      - {x: .0799999982, y: 1.18999994}
-      - {x: .0199999996, y: 1.25999999}
-      - {x: -.0199999996, y: 1.25999999}
-      - {x: -.0799999982, y: 1.18999994}
-      - {x: -.239999995, y: .889999986}
-      - {x: -.340000004, y: .870000005}
-      - {x: -.48999998, y: .810000002}
-      - {x: -.789999962, y: .889999986}
-      - {x: -.879999995, y: .909999967}
-      - {x: -.909999967, y: .899999976}
-      - {x: -.889999986, y: .75999999}
-      - {x: -.799999952, y: .469999999}
-      - {x: -.889999986, y: .239999995}
-      - {x: -.939999998, y: .219999999}
-      - {x: -1.25, y: .049999997}
-      - {x: -1.26999998, y: .0199999996}
-      - {x: -1.26999998, y: -.0199999996}
-      - {x: -1.16999996, y: -.0899999961}
-      - {x: -.909999967, y: -.229999989}
-      - {x: -.849999964, y: -.319999993}
-      - {x: -.799999952, y: -.459999979}
-      - {x: -.870000005, y: -.680000007}
-      - {x: -.909999967, y: -.879999995}
-      - {x: -.870000005, y: -.899999976}
-      - {x: -.839999974, y: -.899999976}
-      - {x: -.649999976, y: -.849999964}
-      - {x: -.419999987, y: -.789999962}
-      - {x: -.329999983, y: -.839999974}
-      - {x: -.25, y: -.879999995}
-      - {x: -.099999994, y: -1.14999998}
-      - {x: -.0299999993, y: -1.25999999}
-      - {x: 0, y: -1.25999999}
-      - {x: .0399999991, y: -1.23000002}
-      - {x: .25999999, y: -.859999955}
-      - {x: .459999979, y: -.799999952}
+  serializedVersion: 3
+  m_Animation: {fileID: 0}
+  m_Animations:
+  - {fileID: 7400000, guid: 79e590649ac7848d888a85e63aa0dab5, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!212 &1433835114
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1933,6 +1883,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
+--- !u!58 &1433835116
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1433835111}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Radius: 1.27999997
+  m_Center: {x: 0, y: 0}
 --- !u!1 &1496539347
 GameObject:
   m_ObjectHideFlags: 0
@@ -2318,6 +2279,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1654363345}
   - 131: {fileID: 1654363346}
+  - 114: {fileID: 1654363347}
   m_Layer: 0
   m_Name: Label-GameOver
   m_TagString: Untagged
@@ -2356,6 +2318,17 @@ GUITexture:
   m_RightBorder: 0
   m_TopBorder: 0
   m_BottomBorder: 0
+--- !u!114 &1654363347
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1654363344}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b5f555d2f6e849f69289adeab06978b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1672791230
 GameObject:
   m_ObjectHideFlags: 0
