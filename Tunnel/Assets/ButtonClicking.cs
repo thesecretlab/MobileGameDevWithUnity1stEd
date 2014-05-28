@@ -9,12 +9,12 @@ public class ButtonClicking : MonoBehaviour {
 	public string mouseUpMessage;
 
 	void OnMouseDown() {
-		if (mouseDownMessage != null)
+		if (mouseDownMessage != null && mouseDownMessage != "")
 			target.SendMessage(mouseDownMessage, SendMessageOptions.RequireReceiver);
 	}
 
 	void OnMouseUp() {
-		if (mouseUpMessage != null)
+		if (mouseUpMessage != null && mouseUpMessage != "")
 			target.SendMessage(mouseUpMessage, SendMessageOptions.RequireReceiver);
 	}
 }
