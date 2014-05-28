@@ -66,4 +66,13 @@ public class GameManager : MonoBehaviour {
 		mainMenu.SetActive(true);
 	}
 
+	void ResetGame() {
+		Reset ();
+	}
+
+	void ResumeGame() {
+		Time.timeScale = 1.0f;
+		mainMenu.SetActive(false);
+	}
+
 }
