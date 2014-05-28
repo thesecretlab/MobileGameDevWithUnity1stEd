@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviour {
 	public GameObject startingPoint;
 	public Rope rope;
 	public Fade fade;
+	public GameObject mainMenu;
 
 	bool treasureCollected = false;
 
@@ -43,6 +44,10 @@ public class GameManager : MonoBehaviour {
 
 		fade.SetAlpha(1.0f);
 		fade.FadeTo(0.0f, 0.5f);
+
+		mainMenu.SetActive(false);
+
+		Time.timeScale = 1.0f;
 	}
 
 	void TrapTouched() {
@@ -54,6 +59,11 @@ public class GameManager : MonoBehaviour {
 		if (treasureCollected == true) {
 			Reset();
 		}
+	}
+
+	void ShowMenu() {
+		Time.timeScale = 0.0f;
+		mainMenu.SetActive(true);
 	}
 
 }
