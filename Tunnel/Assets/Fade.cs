@@ -7,7 +7,7 @@ public class Fade : MonoBehaviour {
 	float fadeSpeed = 0.0f;
 
 	public void FadeTo(float alpha, float time) {
-		float currentAlpha = this.renderer.material.color.a;
+		float currentAlpha = this.GetComponent<Renderer>().material.color.a;
 
 		float deltaAlpha = alpha - currentAlpha;
 
@@ -19,18 +19,18 @@ public class Fade : MonoBehaviour {
 
 
 	public void SetAlpha(float alpha) {
-		Color color = this.renderer.material.color;
+		Color color = this.GetComponent<Renderer>().material.color;
 		color.a = 1.0f;
-		this.renderer.material.color = color;
+		this.GetComponent<Renderer>().material.color = color;
 	}
 
 	
 	void Update () {
 		if (fadeTimeRemaining > 0) {
 			fadeTimeRemaining -= Time.deltaTime;
-			Color color = this.renderer.material.color;
+			Color color = this.GetComponent<Renderer>().material.color;
 			color.a += fadeSpeed * Time.deltaTime;
-			this.renderer.material.color = color;
+			this.GetComponent<Renderer>().material.color = color;
 		}
 	}
 }

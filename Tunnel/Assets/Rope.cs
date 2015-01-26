@@ -83,7 +83,7 @@ public class Rope : MonoBehaviour {
 		}
 
 		// Connect the segment to the rope anchor (ie this object)
-		segmentJoint.connectedBody = this.rigidbody2D;
+		segmentJoint.connectedBody = this.GetComponent<Rigidbody2D>();
 		
 
 
@@ -100,7 +100,7 @@ public class Rope : MonoBehaviour {
 
 		SpringJoint2D nextSegmentJoint = nextSegment.GetComponent<SpringJoint2D>();
 
-		nextSegmentJoint.connectedBody = this.rigidbody2D;
+		nextSegmentJoint.connectedBody = this.GetComponent<Rigidbody2D>();
 
 		ropeSegments.RemoveAt(0);
 

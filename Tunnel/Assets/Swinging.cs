@@ -15,7 +15,7 @@ public class Swinging : MonoBehaviour {
 		Vector2 force = new Vector2(swing * swingSensitivity, 0);
 
 		// apply the force to the rigidbody
-		rigidbody2D.AddForce(force);
+		GetComponent<Rigidbody2D>().AddForce(force);
 	}
 
 }

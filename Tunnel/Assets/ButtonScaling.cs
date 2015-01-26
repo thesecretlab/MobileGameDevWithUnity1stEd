@@ -9,14 +9,14 @@ public class ButtonScaling : MonoBehaviour {
 		float contentScale = Screen.width / 320.0f ;
 
 		// Adjust to account for size
-		Rect inset = guiTexture.pixelInset;
+		Rect inset = GetComponent<GUITexture>().pixelInset;
 
 		inset.x *= contentScale;
 		inset.y *= contentScale;
 		inset.height *= contentScale;
 		inset.width *= contentScale;
 
-		guiTexture.pixelInset = inset;
+		GetComponent<GUITexture>().pixelInset = inset;
 
 	}
 
