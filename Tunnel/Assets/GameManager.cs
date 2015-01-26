@@ -39,7 +39,7 @@ public class GameManager : MonoBehaviour {
 		treasureCollected = true;
 		treasure.SetActive(false);
 
-		currentGnome.treasure.SetActive(true);
+		currentGnome.SetHoldingTreasure(true);
 	}
 
 	void CreateNewGnome() {
@@ -79,7 +79,7 @@ public class GameManager : MonoBehaviour {
 		fade.SetAlpha(1.0f);
 		fade.FadeTo(0.0f, 0.5f);
 
-		currentGnome.treasure.SetActive(false);
+		currentGnome.SetHoldingTreasure(false);
 
 		Time.timeScale = 1.0f;
 	}
