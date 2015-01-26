@@ -1,17 +1,16 @@
 ﻿using UnityEngine;
+using UnityEngine.Events;
 using System.Collections;
 
 public class SignalOnTouch : MonoBehaviour {
 
-	public string messageOnTouch;
+	public UnityEvent onTouch;
 
 	void SendSignal(GameObject objectThatHit) {
 		if (objectThatHit.CompareTag("Player")) {
 			
-			if (messageOnTouch != null) {
-				GameManager.instance.SendMessage(messageOnTouch, this.gameObject);
-			}
-			
+			onTouch.Invoke();
+
 		}
 	}
 

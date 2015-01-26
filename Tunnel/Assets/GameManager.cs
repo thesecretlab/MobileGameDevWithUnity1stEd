@@ -35,7 +35,7 @@ public class GameManager : MonoBehaviour {
 		Reset ();
 	}
 
-	void TreasureCollected() {
+	public void TreasureCollected() {
 		treasureCollected = true;
 		treasure.SetActive(false);
 
@@ -47,6 +47,11 @@ public class GameManager : MonoBehaviour {
 		// if we have a current gnome, make that no longer be the player
 		if (currentGnome != null) {
 			currentGnome.gameObject.tag = "Untagged";
+
+			// Find everything that's currently tagged "Player", and remove that tag
+			foreach (Transform child in currentGnome.transform) {
+				child.gameObject.tag = "Untagged";
+			}
 		}
 
 		GameObject newGnome = (GameObject)Instantiate(gnomePrefab);
@@ -84,12 +89,12 @@ public class GameManager : MonoBehaviour {
 		Time.timeScale = 1.0f;
 	}
 
-	void TrapTouched() {
+	public void TrapTouched() {
 		currentGnome.DestroyGnome();
 		Reset ();
 	}
 
-	void ExitReached() {
+	public void ExitReached() {
 		if (treasureCollected == true) {
 			ShowCompleteMenu();
 		}

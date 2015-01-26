@@ -14,7 +14,7 @@ GameObject:
   - 232: {fileID: 23200000}
   m_Layer: 0
   m_Name: Gnome
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -33,7 +33,7 @@ GameObject:
   - 233: {fileID: 23364250}
   m_Layer: 0
   m_Name: Head
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -51,7 +51,7 @@ GameObject:
   - 50: {fileID: 5015834}
   m_Layer: 0
   m_Name: Body
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -70,7 +70,7 @@ GameObject:
   - 233: {fileID: 23343506}
   m_Layer: 0
   m_Name: ArmLoose
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -90,7 +90,7 @@ GameObject:
   - 231: {fileID: 23112878}
   m_Layer: 0
   m_Name: LegRope
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -109,7 +109,7 @@ GameObject:
   - 233: {fileID: 23393232}
   m_Layer: 0
   m_Name: LegDangle
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -128,7 +128,7 @@ GameObject:
   - 233: {fileID: 23363298}
   m_Layer: 0
   m_Name: ArmHoldEmpty
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -140,8 +140,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100008}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9.74873829, y: 2.27261066, z: 0}
-  m_LocalScale: {x: .295766354, y: .295766294, z: .295766294}
+  m_LocalPosition: {x: 6.51221848, y: 4.90887928, z: 0}
+  m_LocalScale: {x: .200000003, y: .200000003, z: .200000003}
   m_Children:
   - {fileID: 468682}
   - {fileID: 454106}
@@ -157,8 +157,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 192974}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -.710212708, y: -1.47926331, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: -.208203629, w: .978085518}
+  m_LocalPosition: {x: -.710213542, y: -1.47926331, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 400008}
@@ -181,8 +181,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 138678}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.28999996, y: -1.12, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: .355848819, w: .93454361}
+  m_LocalPosition: {x: 1.28999937, y: -1.12000024, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 400008}
@@ -614,7 +614,7 @@ PolygonCollider2D:
   m_GameObject: {fileID: 106050}
   m_Enabled: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   m_Points:
@@ -862,7 +862,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 100008}
   m_Enabled: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
@@ -879,7 +879,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ropeBody: {fileID: 5066038}
-  treasure: {fileID: 0}
+  armHoldingEmpty: {fileID: 21300000, guid: a1ee775673d6b446a9c7df3516921a19, type: 3}
+  armHoldingTreasure: {fileID: 21300000, guid: de67cc81a8fed4de2a276e5c9815ed83, type: 3}
+  holdingArm: {fileID: 21292046}
 --- !u!212 &21250458
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -1123,8 +1125,8 @@ HingeJoint2D:
     m_MaximumMotorForce: 10000
   m_UseLimits: 1
   m_AngleLimits:
-    m_LowerAngle: -36
-    m_UpperAngle: 90.5999985
+    m_LowerAngle: -21.1100006
+    m_UpperAngle: 35.5999985
 --- !u!233 &23363298
 HingeJoint2D:
   m_ObjectHideFlags: 1
@@ -1180,8 +1182,8 @@ HingeJoint2D:
     m_MaximumMotorForce: 10000
   m_UseLimits: 1
   m_AngleLimits:
-    m_LowerAngle: -31.6100006
-    m_UpperAngle: 37.3199997
+    m_LowerAngle: -17.6000004
+    m_UpperAngle: 31
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
