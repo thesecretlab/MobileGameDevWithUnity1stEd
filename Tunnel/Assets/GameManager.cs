@@ -44,7 +44,7 @@ public class GameManager : MonoBehaviour {
 
 		// if we have a current gnome, make that no longer be the player
 		if (currentGnome != null) {
-			currentGnome.gameObject.tag = null;
+			currentGnome.gameObject.tag = "Untagged";
 		}
 
 		GameObject newGnome = (GameObject)Instantiate(gnomePrefab);
