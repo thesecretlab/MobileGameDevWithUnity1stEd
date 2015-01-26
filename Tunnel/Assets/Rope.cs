@@ -147,26 +147,14 @@ public class Rope : MonoBehaviour {
 
 	}
 
-	public void StartIncreasingLength() {
-		isIncreasing = true;
-		Debug.Log("Starting increasing length");
+	public void SetIncreasing(bool increasing) {
+		isIncreasing = increasing;
 	}
 
-	public void StopIncreasingLength() {
-		isIncreasing = false;
-		Debug.Log("Stopping increasing length");
+	public void SetDecreasing(bool decreasing) {
+		isDecreasing = decreasing;
 	}
 
-	public void StartDecreasingLength() {
-		isDecreasing = true;
-		Debug.Log("Starting decreasing length");
-	}
-
-	public void StopDecreasingLength() {
-		isDecreasing = false;
-		Debug.Log("Stopping decreasing length");
-
-	}
 
 
 

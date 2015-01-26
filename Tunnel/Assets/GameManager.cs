@@ -18,14 +18,16 @@ public class GameManager : MonoBehaviour {
 	public GameObject startingPoint;
 	public Rope rope;
 	public Fade fade;
-	public GameObject mainMenu;
-	public GameObject completeMenu;
 
 	public CameraFollow cameraFollow;
 
 	GnomeComponents currentGnome;
 
 	public GameObject gnomePrefab;
+
+	public RectTransform mainMenu;
+	public RectTransform gameplayMenu;
+	public RectTransform gameOverMenu;
 
 	bool treasureCollected = false;
 
@@ -60,7 +62,13 @@ public class GameManager : MonoBehaviour {
 
 	}
 
-	void Reset() {
+	public void Reset() {
+
+		gameOverMenu.gameObject.SetActive(false);
+		mainMenu.gameObject.SetActive(false);
+
+		gameplayMenu.gameObject.SetActive(true);
+
 		treasureCollected = false;
 		treasure.SetActive(true);
 
@@ -70,9 +78,6 @@ public class GameManager : MonoBehaviour {
 
 		fade.SetAlpha(1.0f);
 		fade.FadeTo(0.0f, 0.5f);
-
-		mainMenu.SetActive(false);
-		completeMenu.SetActive(false);
 
 		currentGnome.treasure.SetActive(false);
 
@@ -90,23 +95,25 @@ public class GameManager : MonoBehaviour {
 		}
 	}
 
-	void ShowCompleteMenu() {
+	public void ShowCompleteMenu() {
 		Time.timeScale = 0.0f;
-		completeMenu.SetActive(true);
+		gameOverMenu.gameObject.SetActive(true);
+		gameplayMenu.gameObject.SetActive(false);
 	}
 
-	void ShowMenu() {
-		Time.timeScale = 0.0f;
-		mainMenu.SetActive(true);
-	}
+	public void SetPaused(bool active) {
 
-	void ResetGame() {
-		Reset ();
-	}
+		if (active) {
+			Time.timeScale = 0.0f;
+			mainMenu.gameObject.SetActive(true);
+			gameplayMenu.gameObject.SetActive(false);
+		} else {
+			Time.timeScale = 1.0f;
+			mainMenu.gameObject.SetActive(false);
+			gameplayMenu.gameObject.SetActive(true);
+		}
 
-	void ResumeGame() {
-		Time.timeScale = 1.0f;
-		mainMenu.SetActive(false);
+
 	}
 
 }
