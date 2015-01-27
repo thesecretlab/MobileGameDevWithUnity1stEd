@@ -11,8 +11,10 @@ GameObject:
   - 114: {fileID: 11400000}
   - 58: {fileID: 5800000}
   - 114: {fileID: 11457896}
+  - 114: {fileID: 11436606}
+  - 95: {fileID: 9580906}
   m_Layer: 0
-  m_Name: SpikeBall
+  m_Name: Spinner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27,9 +29,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 443618}
   - 212: {fileID: 21222314}
-  - 111: {fileID: 11178218}
   m_Layer: 0
-  m_Name: SpinnerClean
+  m_Name: Blades
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -45,7 +46,7 @@ GameObject:
   - 4: {fileID: 417022}
   - 212: {fileID: 21251894}
   m_Layer: 0
-  m_Name: SpinnerHubcap
+  m_Name: Hubcap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -61,7 +62,7 @@ GameObject:
   - 4: {fileID: 435044}
   - 212: {fileID: 21293166}
   m_Layer: 0
-  m_Name: SpinnerArm
+  m_Name: Arm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -74,7 +75,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: .929494321, w: .368836641}
-  m_LocalPosition: {x: .75, y: -1.16999996, z: 0}
+  m_LocalPosition: {x: 1.54999995, y: -1.20000005, z: 0}
   m_LocalScale: {x: .376473427, y: .376473457, z: .376473457}
   m_Children:
   - {fileID: 417022}
@@ -131,21 +132,23 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 1.55999994
---- !u!111 &11178218
-Animation:
+--- !u!95 &9580906
+Animator:
+  serializedVersion: 3
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 146376}
+  m_GameObject: {fileID: 100000}
   m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 79e590649ac7848d888a85e63aa0dab5, type: 2}
-  m_Animations:
-  - {fileID: 7400000, guid: 79e590649ac7848d888a85e63aa0dab5, type: 2}
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 13b3b923987304ff99089fddb0c7de95, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -160,18 +163,6 @@ MonoBehaviour:
   onTouch:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: TrapTouched
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, Version=0.0.0.0,
-            Culture=neutral, PublicKeyToken=null
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 11457896}
         m_MethodName: SwapSprite
         m_Mode: 1
@@ -184,6 +175,34 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_MethodName: TrapTouched
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+--- !u!114 &11436606
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8caad4dff3c0848c4920f93c970c838a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onReset:
+    m_PersistentCalls:
+      m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
 --- !u!114 &11457896
@@ -286,7 +305,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
-  m_SortingOrder: -8
+  m_SortingOrder: -2
   m_Sprite: {fileID: 21300000, guid: 5e6c0d7569a364c8daf77c37dd6da61e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000

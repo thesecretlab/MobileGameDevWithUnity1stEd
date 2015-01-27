@@ -37,8 +37,6 @@ public class GameManager : MonoBehaviour {
 
 	public void TreasureCollected() {
 		treasureCollected = true;
-		treasure.SetActive(false);
-
 		currentGnome.SetHoldingTreasure(true);
 	}
 
@@ -69,28 +67,49 @@ public class GameManager : MonoBehaviour {
 
 	public void Reset() {
 
+		// Turn off the menus, turn on the gameplay UI
 		gameOverMenu.gameObject.SetActive(false);
 		mainMenu.gameObject.SetActive(false);
-
 		gameplayMenu.gameObject.SetActive(true);
 
-		treasureCollected = false;
-		treasure.SetActive(true);
+		var resetObjects = FindObjectsOfType<Reset>();
 
+		// Find all Reset components and tell them to reset
+		foreach (Reset r in resetObjects) {
+			r.DoReset();
+		}
+
+		// If we have a gnome, then make it not hold the treasure
+		if (currentGnome != null)
+			currentGnome.SetHoldingTreasure(false);
+
+		// Make a new gnome
 		CreateNewGnome();
+
+		treasureCollected = false;
+		currentGnome.SetHoldingTreasure(false);
+		
+
 
 		fade.gameObject.SetActive(true);
 
 		fade.SetAlpha(1.0f);
 		fade.FadeTo(0.0f, 0.5f);
 
-		currentGnome.SetHoldingTreasure(false);
+
 
 		Time.timeScale = 1.0f;
 	}
 
 	public void TrapTouched() {
+		currentGnome.SetHoldingTreasure(false);
 		currentGnome.DestroyGnome();
+		Reset ();
+	}
+
+	public void FireTrapTouched() {
+		currentGnome.SetHoldingTreasure(false);
+		currentGnome.BurnGnome();
 		Reset ();
 	}
 

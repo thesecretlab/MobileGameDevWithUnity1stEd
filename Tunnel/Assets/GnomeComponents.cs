@@ -10,7 +10,15 @@ public class GnomeComponents : MonoBehaviour {
 
 	public SpriteRenderer holdingArm;
 
+	public GameObject deathPrefab;
+
+	bool dead = false;
+
 	public void SetHoldingTreasure(bool holding) {
+
+		if (dead == true) {
+			return;
+		}
 
 		if (holding) {
 			holdingArm.sprite = armHoldingTreasure;
@@ -20,15 +28,48 @@ public class GnomeComponents : MonoBehaviour {
 
 	}
 
-	public void DestroyGnome() {
+	void DetachComponents() {
 		// find all child objects, and disconnect their joints
-
+		
 		foreach (Transform part in transform) {
-
+			
 			foreach (Joint2D joint in part.GetComponentsInChildren<Joint2D>()) {
-				Destroy (joint);
+				if (Random.Range(0, 2) == 0) {
+					Destroy (joint);
+				}
+				
 			}
-
+			
 		}
+
 	}
+
+	public void DestroyGnome() {
+
+		dead = true;
+
+		foreach (BodyPart part in GetComponentsInChildren<BodyPart>()) {
+			part.Detach();
+		}
+
+		DetachComponents();
+
+		if (deathPrefab != null) {
+			Instantiate(deathPrefab, transform.position, transform.rotation);
+		}
+
+	}
+
+	public void BurnGnome() {
+
+		dead = true;
+
+		foreach (BodyPart part in GetComponentsInChildren<BodyPart>()) {
+			part.Burn();
+		}
+
+		DetachComponents();
+	}
+
+
 }
