@@ -9,6 +9,8 @@ public class BodyPart : MonoBehaviour {
 
 	public float removalTime = 3.0f;
 
+
+
 	public void Detach() {
 		if (detachedSprite != null) {
 			GetComponent<SpriteRenderer>().sprite = detachedSprite;

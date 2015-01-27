@@ -25,6 +25,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 453884}
   - 212: {fileID: 21207930}
+  - 114: {fileID: 11441658}
   m_Layer: 0
   m_Name: LanternBrownBackFlicker
   m_TagString: Untagged
@@ -57,6 +58,20 @@ Transform:
   - {fileID: 453884}
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!114 &11441658
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 185640}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ee354833ca9f41c0840da6fd583fbe1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minimumBrightness: .209999993
+  maximumBrightness: 1
+  flickerStrength: .200000003
 --- !u!212 &21207930
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -84,7 +99,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 705cc3402fffd4e9e8ba71e256950291, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!212 &21270310
