@@ -222,7 +222,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100008}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -11.5229387, y: .577976406, z: 0}
+  m_LocalPosition: {x: 6.98999977, y: 6.86000013, z: 0}
   m_LocalScale: {x: .200000003, y: .200000003, z: .200000003}
   m_Children:
   - {fileID: 468682}
@@ -897,7 +897,7 @@ SpringJoint2D:
   m_Enabled: 1
   m_CollideConnected: 0
   m_ConnectedRigidBody: {fileID: 0}
-  m_Anchor: {x: 1.82554245, y: 3.79245687}
+  m_Anchor: {x: 1.86781311, y: 4.25744152}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_Distance: .00999999978
   m_DampingRatio: 0
