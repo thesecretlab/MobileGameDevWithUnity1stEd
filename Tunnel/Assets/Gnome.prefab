@@ -651,7 +651,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b80bc2d467f494e27b694623edf99529, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  swingSensitivity: 10
+  swingSensitivity: 100
 --- !u!114 &11446468
 MonoBehaviour:
   m_ObjectHideFlags: 1
