@@ -9,12 +9,16 @@ public class CameraFollow : MonoBehaviour {
 
 	void LateUpdate () {
 
-		Vector3 newPosition = this.transform.position;
+		if (target != null) {
+			Vector3 newPosition = this.transform.position;
+			
+			newPosition.y = Mathf.Lerp (newPosition.y, target.transform.position.y, 0.5f);
+			newPosition.y = Mathf.Min(newPosition.y, topLimit);
+			newPosition.y = Mathf.Max(newPosition.y, bottomLimit);
+			transform.position = newPosition;
+		}
 
-		newPosition.y = Mathf.Lerp (newPosition.y, target.transform.position.y, 0.5f);
-		newPosition.y = Mathf.Min(newPosition.y, topLimit);
-		newPosition.y = Mathf.Max(newPosition.y, bottomLimit);
-		transform.position = newPosition;
+
 
 	}
 

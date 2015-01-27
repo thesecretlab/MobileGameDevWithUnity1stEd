@@ -29,6 +29,8 @@ public class GameManager : MonoBehaviour {
 	public RectTransform gameplayMenu;
 	public RectTransform gameOverMenu;
 
+	public float delayAfterDeath = 1.0f;
+
 	bool treasureCollected = false;
 
 	void Start() {
@@ -40,22 +42,33 @@ public class GameManager : MonoBehaviour {
 		currentGnome.SetHoldingTreasure(true);
 	}
 
-	void CreateNewGnome() {
+	void StopGnome() {
+
+		rope.gameObject.SetActive(false);
 
 		// if we have a current gnome, make that no longer be the player
 		if (currentGnome != null) {
 			currentGnome.gameObject.tag = "Untagged";
-
+			
 			// Find everything that's currently tagged "Player", and remove that tag
 			foreach (Transform child in currentGnome.transform) {
 				child.gameObject.tag = "Untagged";
 			}
+
+			currentGnome = null;
 		}
+	}
+
+	void CreateNewGnome() {
+
+		StopGnome();
 
 		GameObject newGnome = (GameObject)Instantiate(gnomePrefab);
 		currentGnome = newGnome.GetComponent<GnomeComponents>();
 		
 		currentGnome.transform.position = startingPoint.transform.position;
+
+		rope.gameObject.SetActive(true);
 		
 		rope.connectedObject = currentGnome.ropeBody;
 
@@ -104,13 +117,25 @@ public class GameManager : MonoBehaviour {
 	public void TrapTouched() {
 		currentGnome.SetHoldingTreasure(false);
 		currentGnome.DestroyGnome();
-		Reset ();
+
+		StopGnome();
+		StartCoroutine("ResetAfterDelay");
+
+	}
+
+	IEnumerator ResetAfterDelay() {
+		cameraFollow.target = null;
+		yield return new WaitForSeconds(delayAfterDeath);
+		Reset();
 	}
 
 	public void FireTrapTouched() {
 		currentGnome.SetHoldingTreasure(false);
 		currentGnome.BurnGnome();
-		Reset ();
+
+		StopGnome ();
+		StartCoroutine("ResetAfterDelay");
+
 	}
 
 	public void ExitReached() {
@@ -138,6 +163,11 @@ public class GameManager : MonoBehaviour {
 		}
 
 
+	}
+
+	public void RestartGame() {
+		Destroy(currentGnome.gameObject);
+		Reset();
 	}
 
 }

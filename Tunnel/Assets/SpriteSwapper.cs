@@ -17,7 +17,6 @@ public class SpriteSwapper : MonoBehaviour {
 
 	public void ResetSprite() {
 		if (originalSprite != null) {
-			Debug.Log ("Resetting sprite");
 			spriteRenderer.sprite = originalSprite;
 		}
 	}

@@ -6,13 +6,13 @@ PlayerSettings:
   serializedVersion: 6
   AndroidProfiler: 0
   defaultScreenOrientation: 0
-  targetDevice: 2
+  targetDevice: 0
   targetGlesGraphics: 1
   targetIOSGraphics: -1
   targetResolution: 0
   accelerometerFrequency: 60
-  companyName: DefaultCompany
-  productName: Tunnel
+  companyName: Secret Lab
+  productName: Gnome
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   defaultScreenWidth: 1024
@@ -43,7 +43,7 @@ PlayerSettings:
   captureSingleScreen: 0
   Override IPod Music: 0
   Prepare IOS For Recording: 0
-  submitAnalytics: 1
+  submitAnalytics: 0
   usePlayerLog: 1
   bakeCollisionMeshes: 0
   forceSingleInstance: 0
@@ -72,7 +72,7 @@ PlayerSettings:
     16:10: 1
     16:9: 1
     Others: 1
-  iPhoneBundleIdentifier: com.Company.ProductName
+  iPhoneBundleIdentifier: au.com.secretlab.Gnome
   preloadedAssets: []
   metroEnableIndependentInputSource: 0
   metroEnableLowLatencyPresentationAPI: 0
@@ -99,11 +99,15 @@ PlayerSettings:
   uIStatusBarHidden: 1
   uIExitOnSuspend: 0
   uIStatusBarStyle: 0
-  iPhoneSplashScreen: {fileID: 0}
-  iPhoneHighResSplashScreen: {fileID: 0}
-  iPhoneTallHighResSplashScreen: {fileID: 0}
-  iPhone47inSplashScreen: {fileID: 0}
-  iPhone55inPortraitSplashScreen: {fileID: 0}
+  iPhoneSplashScreen: {fileID: 2800000, guid: 59491dad261bc4ffa8f8715ba0233d9b, type: 3}
+  iPhoneHighResSplashScreen: {fileID: 2800000, guid: 7c47fb3e1556b4002a6eac77b307454b,
+    type: 3}
+  iPhoneTallHighResSplashScreen: {fileID: 2800000, guid: bad411704500846dbb0935fec834d1f4,
+    type: 3}
+  iPhone47inSplashScreen: {fileID: 2800000, guid: 3f219b3b5ec4d400684169f83a9f4171,
+    type: 3}
+  iPhone55inPortraitSplashScreen: {fileID: 2800000, guid: 41186868f53084a4b9600fe93ec05f70,
+    type: 3}
   iPhone55inLandscapeSplashScreen: {fileID: 0}
   iPadPortraitSplashScreen: {fileID: 0}
   iPadHighResPortraitSplashScreen: {fileID: 0}
@@ -128,7 +132,7 @@ PlayerSettings:
   m_BuildTargetIcons:
   - m_BuildTarget: 
     m_Icons:
-    - m_Icon: {fileID: 0}
+    - m_Icon: {fileID: 2800000, guid: 3220ed38ab6be4747be4ced63677a586, type: 3}
       m_Size: 128
   m_BuildTargetBatching: []
   webPlayerTemplate: APPLICATION:Default
