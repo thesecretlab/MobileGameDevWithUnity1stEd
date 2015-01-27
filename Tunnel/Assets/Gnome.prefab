@@ -12,6 +12,7 @@ GameObject:
   - 61: {fileID: 6100000}
   - 50: {fileID: 5000008}
   - 232: {fileID: 23200000}
+  - 114: {fileID: 11438534}
   m_Layer: 0
   m_Name: Gnome
   m_TagString: Player
@@ -882,6 +883,18 @@ MonoBehaviour:
   armHoldingEmpty: {fileID: 21300000, guid: a1ee775673d6b446a9c7df3516921a19, type: 3}
   armHoldingTreasure: {fileID: 21300000, guid: de67cc81a8fed4de2a276e5c9815ed83, type: 3}
   holdingArm: {fileID: 21292046}
+--- !u!114 &11438534
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b80bc2d467f494e27b694623edf99529, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  swingSensitivity: 8
 --- !u!212 &21250458
 SpriteRenderer:
   m_ObjectHideFlags: 1
