@@ -1,13 +1,15 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
+[RequireComponent (typeof(Image))]
 public class Fade : MonoBehaviour {
 
 	float fadeTimeRemaining = 0.0f;
 	float fadeSpeed = 0.0f;
 
 	public void FadeTo(float alpha, float time) {
-		float currentAlpha = this.GetComponent<Renderer>().material.color.a;
+		float currentAlpha = this.GetComponent<Image>().color.a;
 
 		float deltaAlpha = alpha - currentAlpha;
 
@@ -19,18 +21,18 @@ public class Fade : MonoBehaviour {
 
 
 	public void SetAlpha(float alpha) {
-		Color color = this.GetComponent<Renderer>().material.color;
-		color.a = 1.0f;
-		this.GetComponent<Renderer>().material.color = color;
+		Color color = this.GetComponent<Image>().color;
+		color.a = alpha;
+		this.GetComponent<Image>().color = color;
 	}
 
 	
 	void Update () {
 		if (fadeTimeRemaining > 0) {
 			fadeTimeRemaining -= Time.deltaTime;
-			Color color = this.GetComponent<Renderer>().material.color;
+			Color color = this.GetComponent<Image>().color;
 			color.a += fadeSpeed * Time.deltaTime;
-			this.GetComponent<Renderer>().material.color = color;
+			this.GetComponent<Image>().color = color;
 		}
 	}
 }
