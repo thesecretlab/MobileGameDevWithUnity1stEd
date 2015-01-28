@@ -60,9 +60,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ee354833ca9f41c0840da6fd583fbe1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minimumBrightness: .159999996
-  maximumBrightness: 1
-  flickerStrength: .649999976
+  minimumBrightness: .0399999991
+  maximumBrightness: .75999999
+  flickerStrength: .349999994
 --- !u!114 &11407998
 MonoBehaviour:
   m_ObjectHideFlags: 1
