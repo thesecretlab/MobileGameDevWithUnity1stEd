@@ -6,8 +6,20 @@ public class SignalOnTouch : MonoBehaviour {
 
 	public UnityEvent onTouch;
 
+	public bool playAudioOnTouch = true;
+
 	void SendSignal(GameObject objectThatHit) {
+
+
 		if (objectThatHit.CompareTag("Player")) {
+
+			if (playAudioOnTouch) {
+				var audio = GetComponent<AudioSource>();
+				
+				if (audio)
+					audio.Play();
+			}
+
 			
 			onTouch.Invoke();
 

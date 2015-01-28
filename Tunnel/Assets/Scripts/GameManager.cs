@@ -30,11 +30,13 @@ public class GameManager : MonoBehaviour {
 	public RectTransform gameOverMenu;
 
 	public bool gnomeInvincible { get; set; }
-		
 
 	public float delayAfterDeath = 1.0f;
 
 	bool treasureCollected = false;
+
+	public AudioClip gnomeDiedSound;
+	public AudioClip gameOverSound;
 
 	void Start() {
 		Reset ();
@@ -122,6 +124,11 @@ public class GameManager : MonoBehaviour {
 
 	public void TrapTouched() {
 
+		var audio = GetComponent<AudioSource>();
+		if (audio) {
+			audio.PlayOneShot(this.gnomeDiedSound);
+		}
+
 		currentGnome.DestroyGnome(GnomeComponents.DamageType.Slicing);
 
 		if (gnomeInvincible == false) {
@@ -135,10 +142,16 @@ public class GameManager : MonoBehaviour {
 	IEnumerator ResetAfterDelay() {
 		cameraFollow.target = null;
 		yield return new WaitForSeconds(delayAfterDeath);
+
 		Reset();
 	}
 
 	public void FireTrapTouched() {
+
+		var audio = GetComponent<AudioSource>();
+		if (audio) {
+			audio.PlayOneShot(this.gnomeDiedSound);
+		}
 
 		currentGnome.DestroyGnome(GnomeComponents.DamageType.Burning);
 
@@ -159,6 +172,12 @@ public class GameManager : MonoBehaviour {
 	}
 
 	public void ShowCompleteMenu() {
+
+		var audio = GetComponent<AudioSource>();
+		if (audio) {
+			audio.PlayOneShot(this.gameOverSound);
+		}
+
 		Time.timeScale = 0.0f;
 		gameOverMenu.gameObject.SetActive(true);
 		gameplayMenu.gameObject.SetActive(false);

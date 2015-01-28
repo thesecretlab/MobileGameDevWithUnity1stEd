@@ -236,6 +236,10 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 628501875}
     m_Modifications:
+    - target: {fileID: 11496470, guid: 0ec6d428a9fc94ed7a16cd52e6369ddf, type: 2}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 446922, guid: 0ec6d428a9fc94ed7a16cd52e6369ddf, type: 2}
       propertyPath: m_LocalPosition.x
       value: 2.36999989
@@ -279,6 +283,22 @@ Prefab:
     - target: {fileID: 446922, guid: 0ec6d428a9fc94ed7a16cd52e6369ddf, type: 2}
       propertyPath: m_LocalScale.x
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11496470, guid: 0ec6d428a9fc94ed7a16cd52e6369ddf, type: 2}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11496470, guid: 0ec6d428a9fc94ed7a16cd52e6369ddf, type: 2}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11496470, guid: 0ec6d428a9fc94ed7a16cd52e6369ddf, type: 2}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: TrapTouched
+      objectReference: {fileID: 0}
+    - target: {fileID: 11496470, guid: 0ec6d428a9fc94ed7a16cd52e6369ddf, type: 2}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0ec6d428a9fc94ed7a16cd52e6369ddf, type: 2}
@@ -1817,6 +1837,10 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 628501875}
     m_Modifications:
+    - target: {fileID: 11496470, guid: 6f68a011f19fc4d568e065de031f3ea2, type: 2}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 446922, guid: 6f68a011f19fc4d568e065de031f3ea2, type: 2}
       propertyPath: m_LocalPosition.x
       value: 2.29999995
@@ -1853,6 +1877,22 @@ Prefab:
       propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 802054041}
+    - target: {fileID: 11496470, guid: 6f68a011f19fc4d568e065de031f3ea2, type: 2}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11496470, guid: 6f68a011f19fc4d568e065de031f3ea2, type: 2}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11496470, guid: 6f68a011f19fc4d568e065de031f3ea2, type: 2}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: TrapTouched
+      objectReference: {fileID: 0}
+    - target: {fileID: 11496470, guid: 6f68a011f19fc4d568e065de031f3ea2, type: 2}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6f68a011f19fc4d568e065de031f3ea2, type: 2}
   m_IsPrefabParent: 0
@@ -2638,6 +2678,10 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 628501875}
     m_Modifications:
+    - target: {fileID: 11496470, guid: 0ec6d428a9fc94ed7a16cd52e6369ddf, type: 2}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 446922, guid: 0ec6d428a9fc94ed7a16cd52e6369ddf, type: 2}
       propertyPath: m_LocalPosition.x
       value: -2.3499999
@@ -2681,6 +2725,22 @@ Prefab:
     - target: {fileID: 446922, guid: 0ec6d428a9fc94ed7a16cd52e6369ddf, type: 2}
       propertyPath: m_LocalScale.x
       value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11496470, guid: 0ec6d428a9fc94ed7a16cd52e6369ddf, type: 2}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11496470, guid: 0ec6d428a9fc94ed7a16cd52e6369ddf, type: 2}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11496470, guid: 0ec6d428a9fc94ed7a16cd52e6369ddf, type: 2}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: TrapTouched
+      objectReference: {fileID: 0}
+    - target: {fileID: 11496470, guid: 0ec6d428a9fc94ed7a16cd52e6369ddf, type: 2}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0ec6d428a9fc94ed7a16cd52e6369ddf, type: 2}
@@ -2786,6 +2846,10 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 628501875}
     m_Modifications:
+    - target: {fileID: 11496470, guid: 0ec6d428a9fc94ed7a16cd52e6369ddf, type: 2}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 446922, guid: 0ec6d428a9fc94ed7a16cd52e6369ddf, type: 2}
       propertyPath: m_LocalPosition.x
       value: -2.3499999
@@ -2829,6 +2893,22 @@ Prefab:
     - target: {fileID: 446922, guid: 0ec6d428a9fc94ed7a16cd52e6369ddf, type: 2}
       propertyPath: m_LocalScale.x
       value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11496470, guid: 0ec6d428a9fc94ed7a16cd52e6369ddf, type: 2}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11496470, guid: 0ec6d428a9fc94ed7a16cd52e6369ddf, type: 2}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11496470, guid: 0ec6d428a9fc94ed7a16cd52e6369ddf, type: 2}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: TrapTouched
+      objectReference: {fileID: 0}
+    - target: {fileID: 11496470, guid: 0ec6d428a9fc94ed7a16cd52e6369ddf, type: 2}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0ec6d428a9fc94ed7a16cd52e6369ddf, type: 2}
@@ -3558,7 +3638,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 792469696}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.83500004, y: -52.0250015, z: -1}
+  m_LocalPosition: {x: -2.93000007, y: -51.8899994, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 541381541}
@@ -3572,6 +3652,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 802054042}
   - 114: {fileID: 802054041}
+  - 82: {fileID: 802054043}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -3600,6 +3681,8 @@ MonoBehaviour:
   gameplayMenu: {fileID: 1857434158}
   gameOverMenu: {fileID: 29346752}
   delayAfterDeath: 1
+  gnomeDiedSound: {fileID: 8300000, guid: 070a45332512c4d5a8b481f70ac99e27, type: 3}
+  gameOverSound: {fileID: 8300000, guid: db3dc04db170d487ca696838ffc6c013, type: 3}
 --- !u!4 &802054042
 Transform:
   m_ObjectHideFlags: 0
@@ -3612,6 +3695,75 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 8
+--- !u!82 &802054043
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 802054040}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!1 &808734057
 GameObject:
   m_ObjectHideFlags: 0
@@ -3636,7 +3788,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 808734057}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -52.1699982, z: -1}
+  m_LocalPosition: {x: 0, y: -52.0299988, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 541381541}
@@ -3795,6 +3947,10 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 628501875}
     m_Modifications:
+    - target: {fileID: 11496470, guid: abefdfae85cd74a3cbc6af98279f65f5, type: 2}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 446922, guid: abefdfae85cd74a3cbc6af98279f65f5, type: 2}
       propertyPath: m_LocalPosition.x
       value: 1.76999998
@@ -3838,6 +3994,18 @@ Prefab:
     - target: {fileID: 11496470, guid: abefdfae85cd74a3cbc6af98279f65f5, type: 2}
       propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: TrapTouched
+      objectReference: {fileID: 0}
+    - target: {fileID: 11496470, guid: abefdfae85cd74a3cbc6af98279f65f5, type: 2}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11496470, guid: abefdfae85cd74a3cbc6af98279f65f5, type: 2}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11496470, guid: abefdfae85cd74a3cbc6af98279f65f5, type: 2}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: abefdfae85cd74a3cbc6af98279f65f5, type: 2}
@@ -4072,6 +4240,7 @@ GameObject:
   - 114: {fileID: 1163112173}
   - 114: {fileID: 1163112176}
   - 114: {fileID: 1163112175}
+  - 82: {fileID: 1163112177}
   m_Layer: 0
   m_Name: Treasure
   m_TagString: Untagged
@@ -4172,8 +4341,21 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1163112177}
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
+  playAudioOnTouch: 1
 --- !u!61 &1163112174
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4225,6 +4407,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 1163112177}
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
 --- !u!114 &1163112176
@@ -4240,6 +4434,75 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spriteToUse: {fileID: 21300000, guid: 640d560c9cae846a3aa0cf905420f752, type: 3}
   spriteRenderer: {fileID: 1163112171}
+--- !u!82 &1163112177
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1163112170}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: eaceb73c0bd984617befe2f18589fc0e, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!1001 &1193630948
 Prefab:
   m_ObjectHideFlags: 0
@@ -4579,6 +4842,7 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
+  playAudioOnTouch: 1
 --- !u!61 &1275775941
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4631,29 +4895,9 @@ Prefab:
       propertyPath: m_RootOrder
       value: 11
       objectReference: {fileID: 0}
-    - target: {fileID: 11408176, guid: 8720049b1a07d443bab6091182d8575c, type: 2}
-      propertyPath: timeBetweenShots
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 421436, guid: 8720049b1a07d443bab6091182d8575c, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 480666, guid: 8720049b1a07d443bab6091182d8575c, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: .707106829
-      objectReference: {fileID: 0}
-    - target: {fileID: 480666, guid: 8720049b1a07d443bab6091182d8575c, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: .707106709
-      objectReference: {fileID: 0}
     - target: {fileID: 100026, guid: 8720049b1a07d443bab6091182d8575c, type: 2}
       propertyPath: m_Name
       value: Flamethrower 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 11408176, guid: 8720049b1a07d443bab6091182d8575c, type: 2}
-      propertyPath: timeToStart
-      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8720049b1a07d443bab6091182d8575c, type: 2}
@@ -5335,6 +5579,10 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 628501875}
     m_Modifications:
+    - target: {fileID: 11496470, guid: 0ec6d428a9fc94ed7a16cd52e6369ddf, type: 2}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 446922, guid: 0ec6d428a9fc94ed7a16cd52e6369ddf, type: 2}
       propertyPath: m_LocalPosition.x
       value: 2.42000008
@@ -5371,6 +5619,22 @@ Prefab:
       propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 802054041}
+    - target: {fileID: 11496470, guid: 0ec6d428a9fc94ed7a16cd52e6369ddf, type: 2}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11496470, guid: 0ec6d428a9fc94ed7a16cd52e6369ddf, type: 2}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11496470, guid: 0ec6d428a9fc94ed7a16cd52e6369ddf, type: 2}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: TrapTouched
+      objectReference: {fileID: 0}
+    - target: {fileID: 11496470, guid: 0ec6d428a9fc94ed7a16cd52e6369ddf, type: 2}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0ec6d428a9fc94ed7a16cd52e6369ddf, type: 2}
   m_IsPrefabParent: 0
@@ -5381,6 +5645,10 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 628501875}
     m_Modifications:
+    - target: {fileID: 11496470, guid: 6f68a011f19fc4d568e065de031f3ea2, type: 2}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 446922, guid: 6f68a011f19fc4d568e065de031f3ea2, type: 2}
       propertyPath: m_LocalPosition.x
       value: 2.29999995
@@ -5420,6 +5688,22 @@ Prefab:
     - target: {fileID: 198134, guid: 6f68a011f19fc4d568e065de031f3ea2, type: 2}
       propertyPath: m_Name
       value: RedSpikes 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11496470, guid: 6f68a011f19fc4d568e065de031f3ea2, type: 2}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11496470, guid: 6f68a011f19fc4d568e065de031f3ea2, type: 2}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11496470, guid: 6f68a011f19fc4d568e065de031f3ea2, type: 2}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: TrapTouched
+      objectReference: {fileID: 0}
+    - target: {fileID: 11496470, guid: 6f68a011f19fc4d568e065de031f3ea2, type: 2}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6f68a011f19fc4d568e065de031f3ea2, type: 2}
@@ -5736,6 +6020,10 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 628501875}
     m_Modifications:
+    - target: {fileID: 11496470, guid: 6f68a011f19fc4d568e065de031f3ea2, type: 2}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 446922, guid: 6f68a011f19fc4d568e065de031f3ea2, type: 2}
       propertyPath: m_LocalPosition.x
       value: -2
@@ -5779,6 +6067,22 @@ Prefab:
     - target: {fileID: 446922, guid: 6f68a011f19fc4d568e065de031f3ea2, type: 2}
       propertyPath: m_LocalScale.x
       value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11496470, guid: 6f68a011f19fc4d568e065de031f3ea2, type: 2}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11496470, guid: 6f68a011f19fc4d568e065de031f3ea2, type: 2}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11496470, guid: 6f68a011f19fc4d568e065de031f3ea2, type: 2}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: TrapTouched
+      objectReference: {fileID: 0}
+    - target: {fileID: 11496470, guid: 6f68a011f19fc4d568e065de031f3ea2, type: 2}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6f68a011f19fc4d568e065de031f3ea2, type: 2}
@@ -5840,7 +6144,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1752882373}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.83500004, y: -52.0250015, z: -1}
+  m_LocalPosition: {x: 2.93000007, y: -51.8899994, z: -1}
   m_LocalScale: {x: -1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 541381541}

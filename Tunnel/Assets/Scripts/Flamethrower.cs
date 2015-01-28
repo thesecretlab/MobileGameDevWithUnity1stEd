@@ -19,6 +19,8 @@ public class Flamethrower : MonoBehaviour {
 
 	public float timeToStart = 1.0f;
 
+	public AudioClip fireballSound;
+
 	// Use this for initialization
 	void Start () {
 		spriteRenderer.sprite = inactiveSprite;
@@ -36,6 +38,12 @@ public class Flamethrower : MonoBehaviour {
 			StartCoroutine("Cooldown");
 
 			if (fireballPrefab != null) {
+
+				var audio = GetComponent<AudioSource>();
+				if (audio && fireballSound) {
+					audio.PlayOneShot(fireballSound);
+				}
+
 				var fireball = (GameObject)Instantiate(fireballPrefab, emissionPoint.position, Quaternion.identity);
 				fireball.GetComponent<FireBall>().direction = transform.right;
 
