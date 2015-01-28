@@ -93,8 +93,6 @@ public class GnomeComponents : MonoBehaviour {
 
 						fountain.transform.SetParent(this.transform, true);
 					}
-
-					break;
 				}
 
 				// Disconnect this object
