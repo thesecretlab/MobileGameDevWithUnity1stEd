@@ -11,11 +11,13 @@ public class Flamethrower : MonoBehaviour {
 
 	public GameObject fireballPrefab;
 
-	public float timeBetweenShots;
+	public float timeBetweenShots = 4.0f;
 
-	public float timeToCoolDown;
+	public float timeToCoolDown = 0.2f;
 
 	public Transform emissionPoint;
+
+	public float timeToStart = 1.0f;
 
 	// Use this for initialization
 	void Start () {
@@ -24,6 +26,9 @@ public class Flamethrower : MonoBehaviour {
 	}
 
 	IEnumerator ShootFireballs() {
+
+		yield return new WaitForSeconds(timeToStart);
+
 		while (true) {
 
 			yield return new WaitForSeconds(this.timeBetweenShots);
