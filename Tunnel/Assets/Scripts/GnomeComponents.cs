@@ -66,25 +66,30 @@ public class GnomeComponents : MonoBehaviour {
 		// find all child objects, and randomly disconnect their joints
 		foreach (BodyPart part in GetComponentsInChildren<BodyPart>()) {
 
-			if (type == DamageType.Burning) {
+			switch (type) {
+
+			case DamageType.Burning:
 				// 1 in 3 chance of burning
 				bool shouldBurn = Random.Range (0, 2) == 0;
 				if (shouldBurn) {
 					part.ApplyDamageSprite(type);
 				}
-			} else {
+				break;
+
+			case DamageType.Slicing:
+				// Slice damage always applies a damage sprite
 				part.ApplyDamageSprite (type);
 
+				break;
 			}
-
-			part.Detach ();
 
 			// 1 in 3 chance of separating from body
 			bool shouldDetach = Random.Range (0, 2) == 0;
 
 			if (shouldDetach) {
 
-
+				// Make this object remove its rigidbody and collider after it comes to rest
+				part.Detach ();
 
 				// If we're separating, and the damage type was Slicing,
 				// add a blood fountain
