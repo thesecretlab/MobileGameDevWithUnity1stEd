@@ -57,6 +57,13 @@ public class GnomeComponents : MonoBehaviour {
 
 	public void DestroyGnome() {
 
+		if (deathPrefab != null) {
+			Instantiate(deathPrefab, transform.position, transform.rotation);
+        }
+
+		if (GameManager.instance.gnomeInvincible)
+			return;
+
 		dead = true;
 
 		foreach (BodyPart part in GetComponentsInChildren<BodyPart>()) {
@@ -65,13 +72,14 @@ public class GnomeComponents : MonoBehaviour {
 
 		DetachComponents();
 
-		if (deathPrefab != null) {
-			Instantiate(deathPrefab, transform.position, transform.rotation);
-		}
+
 
 	}
 
 	public void BurnGnome() {
+
+		if (GameManager.instance.gnomeInvincible)
+			return;
 
 		dead = true;
 

@@ -29,6 +29,9 @@ public class GameManager : MonoBehaviour {
 	public RectTransform gameplayMenu;
 	public RectTransform gameOverMenu;
 
+	public bool gnomeInvincible { get; set; }
+		
+
 	public float delayAfterDeath = 1.0f;
 
 	bool treasureCollected = false;
@@ -43,6 +46,9 @@ public class GameManager : MonoBehaviour {
 	}
 
 	void StopGnome() {
+
+		if (gnomeInvincible)
+			return;
 
 		rope.gameObject.SetActive(false);
 
@@ -118,6 +124,9 @@ public class GameManager : MonoBehaviour {
 		currentGnome.SetHoldingTreasure(false);
 		currentGnome.DestroyGnome();
 
+		if (gnomeInvincible)
+			return;
+
 		StopGnome();
 		StartCoroutine("ResetAfterDelay");
 
@@ -133,6 +142,9 @@ public class GameManager : MonoBehaviour {
 		currentGnome.SetHoldingTreasure(false);
 		currentGnome.BurnGnome();
 
+		if (gnomeInvincible)
+			return;
+        
 		StopGnome ();
 		StartCoroutine("ResetAfterDelay");
 
