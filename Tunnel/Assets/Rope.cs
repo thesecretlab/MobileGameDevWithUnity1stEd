@@ -143,7 +143,9 @@ public class Rope : MonoBehaviour {
 			lineRenderer.SetPosition(i+1, ropeSegments[i].transform.position);
 		}
 
-		lineRenderer.SetPosition(ropeSegments.Count + 1, connectedObject.transform.position);
+		// Last segment 
+		SpringJoint2D connectedObjectJoint = connectedObject.GetComponent<SpringJoint2D>();
+		lineRenderer.SetPosition(ropeSegments.Count + 1, connectedObject.transform.TransformPoint(connectedObjectJoint.anchor));
 
 	}
 
