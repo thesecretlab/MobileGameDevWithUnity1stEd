@@ -1,24 +1,18 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-[RequireComponent (typeof(SpriteRenderer))]
 public class FireBall : MonoBehaviour {
 
-	public Sprite[] possibleSprites;
-
 	public float speed = 6.0f;
+
+	public Vector3 direction;
 
 	public float lifetime = 5.0f;
 
 	// Use this for initialization
 	void Start () {
 
-		var sprite = possibleSprites[Random.Range(0, possibleSprites.Length)];
-
-		GetComponent<SpriteRenderer>().sprite = sprite;
-
 		StartCoroutine("RemoveAfterTimeout");
-
 
 	}
 
