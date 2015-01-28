@@ -31,8 +31,8 @@ public class Flamethrower : MonoBehaviour {
 			StartCoroutine("Cooldown");
 
 			if (fireballPrefab != null) {
-				var fireball = (GameObject)Instantiate(fireballPrefab, emissionPoint.position, emissionPoint.rotation);
-				fireball.GetComponent<FireBall>().direction = emissionPoint.transform.forward;
+				var fireball = (GameObject)Instantiate(fireballPrefab, emissionPoint.position, Quaternion.identity);
+				fireball.GetComponent<FireBall>().direction = transform.right;
 
 				// Connect the fireball's Signal On Touch to the game manager
 				fireball.GetComponent<SignalOnTouch>().onTouch.AddListener(
