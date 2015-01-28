@@ -11,6 +11,9 @@ public class GnomeComponents : MonoBehaviour {
 	public SpriteRenderer holdingArm;
 
 	public GameObject deathPrefab;
+	public GameObject ghostPrefab;
+
+	public float delayBeforeRemoving = 3.0f;
 
 	bool dead = false;
 
@@ -41,6 +44,14 @@ public class GnomeComponents : MonoBehaviour {
 			}
 			
 		}
+
+		// Add a Remove-After-Delay component
+		var remove = gameObject.AddComponent<RemoveAfterDelay>();
+		remove.delay = delayBeforeRemoving;
+
+		// Add the ghost
+
+		Instantiate(ghostPrefab, transform.position, Quaternion.identity);
 
 	}
 

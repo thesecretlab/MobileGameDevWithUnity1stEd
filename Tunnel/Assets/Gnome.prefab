@@ -612,6 +612,8 @@ MonoBehaviour:
   armHoldingTreasure: {fileID: 21300000, guid: de67cc81a8fed4de2a276e5c9815ed83, type: 3}
   holdingArm: {fileID: 21292046}
   deathPrefab: {fileID: 160798, guid: f67be4a20e56141358977cafc88be578, type: 2}
+  ghostPrefab: {fileID: 149986, guid: 8462ae423c72542fe9010e7b2184c4e1, type: 2}
+  delayBeforeRemoving: 3
 --- !u!114 &11426314
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -625,7 +627,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   detachedSprite: {fileID: 21300000, guid: 8afa1c3dcf75d4b8eb95a65ceac96a4c, type: 3}
   burnedSprite: {fileID: 21300000, guid: a85ad74fd4b5b4b31a8915ab417dcbde, type: 3}
-  removalTime: 3
 --- !u!114 &11429300
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -639,7 +640,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   detachedSprite: {fileID: 21300000, guid: 38c4b3fe54b99498bbb449ea10e5516c, type: 3}
   burnedSprite: {fileID: 21300000, guid: 6818f2e0b32214f168f7c4340fa6e4c7, type: 3}
-  removalTime: 3
 --- !u!114 &11438534
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -665,7 +665,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   detachedSprite: {fileID: 21300000, guid: e93188065d76f4346b397475472ede76, type: 3}
   burnedSprite: {fileID: 21300000, guid: c9be8ea6c50314e18911f059db74cb5c, type: 3}
-  removalTime: 3
 --- !u!114 &11446858
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -679,7 +678,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   detachedSprite: {fileID: 21300000, guid: 20e9587363bb44d9992ff9e371975b60, type: 3}
   burnedSprite: {fileID: 21300000, guid: 9e7e5dd6f8cda4ae582d768665b2c99b, type: 3}
-  removalTime: 3
 --- !u!114 &11447482
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -693,7 +691,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   detachedSprite: {fileID: 21300000, guid: 2b198ff5f6b074e87a1008a5aa817eaf, type: 3}
   burnedSprite: {fileID: 21300000, guid: d9af2a0bf4dfa48d8aa416b0730053e0, type: 3}
-  removalTime: 3
 --- !u!114 &11484404
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -707,7 +704,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   detachedSprite: {fileID: 21300000, guid: 16296a8f8be954235bc18fc5a20518cf, type: 3}
   burnedSprite: {fileID: 21300000, guid: ae4e718476b654f95a5b872306a67625, type: 3}
-  removalTime: 3
 --- !u!212 &21250458
 SpriteRenderer:
   m_ObjectHideFlags: 1
