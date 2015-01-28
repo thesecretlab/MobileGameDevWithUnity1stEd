@@ -843,6 +843,7 @@ MonoBehaviour:
   flameDeathPrefab: {fileID: 117944, guid: c31da0e6afdc04044b1b336ea121dc8d, type: 2}
   ghostPrefab: {fileID: 149986, guid: 8462ae423c72542fe9010e7b2184c4e1, type: 2}
   delayBeforeRemoving: 3
+  delayBeforeReleasingGhost: .5
   bloodFountainPrefab: {fileID: 134656, guid: 63548790aea1344148c949be1885e10f, type: 2}
 --- !u!114 &11426314
 MonoBehaviour:

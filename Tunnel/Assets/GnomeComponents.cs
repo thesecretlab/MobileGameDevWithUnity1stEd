@@ -15,6 +15,7 @@ public class GnomeComponents : MonoBehaviour {
 	public GameObject ghostPrefab;
 
 	public float delayBeforeRemoving = 3.0f;
+	public float delayBeforeReleasingGhost = 0.25f;
 
 	public GameObject bloodFountainPrefab;
 
@@ -107,9 +108,15 @@ public class GnomeComponents : MonoBehaviour {
 		var remove = gameObject.AddComponent<RemoveAfterDelay>();
 		remove.delay = delayBeforeRemoving;
 		
+
+		StartCoroutine("ReleaseGhost");
+	}
+
+	IEnumerator ReleaseGhost() {
+		yield return new WaitForSeconds(delayBeforeReleasingGhost);
+
 		// Add the ghost		
 		Instantiate(ghostPrefab, transform.position, Quaternion.identity);
-
 	}
 
 
