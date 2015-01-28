@@ -53,13 +53,23 @@ public class GnomeComponents : MonoBehaviour {
 		// find all child objects, and randomly disconnect their joints
 		foreach (BodyPart part in GetComponentsInChildren<BodyPart>()) {
 
+			if (type == DamageType.Burning) {
+				// 1 in 3 chance of burning
+				bool shouldBurn = Random.Range (0, 2) == 0;
+				if (shouldBurn) {
+					part.Burn();
+				}
+			}
+
+			// 1 in 3 chance of separating from body
 			bool shouldDetach = Random.Range (0, 2) == 0;
 
 			if (shouldDetach) {
 
-				switch (type) {
-				case DamageType.Slicing:
+				// If we're separating, and the damage type was Slicing,
+				// add a blood fountain
 
+				if (type == DamageType.Slicing) {
 					part.Detach ();
 
 					if (part.bloodFountainOrigin != null) {
@@ -72,22 +82,15 @@ public class GnomeComponents : MonoBehaviour {
 					}
 
 					break;
-
-				case DamageType.Burning:
-
-					part.Burn ();
-					break;
 				}
 
+				// Disconnect this object
 				foreach (Joint2D joint in part.GetComponentsInChildren<Joint2D>()) {
 					Destroy (joint);
 				}
 			}
-			
-
-			
 		}
-		
+
 		// Add a Remove-After-Delay component to this object
 		var remove = gameObject.AddComponent<RemoveAfterDelay>();
 		remove.delay = delayBeforeRemoving;
