@@ -840,6 +840,7 @@ MonoBehaviour:
   armHoldingTreasure: {fileID: 21300000, guid: de67cc81a8fed4de2a276e5c9815ed83, type: 3}
   holdingArm: {fileID: 21292046}
   deathPrefab: {fileID: 160798, guid: f67be4a20e56141358977cafc88be578, type: 2}
+  flameDeathPrefab: {fileID: 117944, guid: c31da0e6afdc04044b1b336ea121dc8d, type: 2}
   ghostPrefab: {fileID: 149986, guid: 8462ae423c72542fe9010e7b2184c4e1, type: 2}
   delayBeforeRemoving: 3
   bloodFountainPrefab: {fileID: 134656, guid: 63548790aea1344148c949be1885e10f, type: 2}

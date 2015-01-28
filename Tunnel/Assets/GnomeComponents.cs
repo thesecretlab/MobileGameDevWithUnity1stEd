@@ -11,6 +11,7 @@ public class GnomeComponents : MonoBehaviour {
 	public SpriteRenderer holdingArm;
 
 	public GameObject deathPrefab;
+	public GameObject flameDeathPrefab;
 	public GameObject ghostPrefab;
 
 	public float delayBeforeRemoving = 3.0f;
@@ -39,9 +40,20 @@ public class GnomeComponents : MonoBehaviour {
 
 	public void DestroyGnome(DamageType type) {
 
-		if (deathPrefab != null) {
-			Instantiate(deathPrefab, transform.position, transform.rotation);
-        }
+		switch (type) {
+
+		case DamageType.Burning:
+			if (flameDeathPrefab != null) {
+				Instantiate(flameDeathPrefab, transform.position, transform.rotation);
+			}
+			break;
+
+		case DamageType.Slicing:
+			if (deathPrefab != null) {
+				Instantiate(deathPrefab, transform.position, transform.rotation);
+			}
+			break;
+		}
 
 		if (GameManager.instance.gnomeInvincible)
 			return;
