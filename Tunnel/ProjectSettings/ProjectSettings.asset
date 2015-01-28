@@ -78,7 +78,7 @@ PlayerSettings:
   metroEnableLowLatencyPresentationAPI: 0
   xboxOneDisableKinectGpuReservation: 0
   productGUID: 7066d62100ef447b4b9f808f2d8cbfac
-  iPhoneBundleVersion: 1.0
+  iPhoneBundleVersion: 1.0.1
   AndroidBundleVersionCode: 1
   AndroidMinSdkVersion: 9
   AndroidPreferredInstallLocation: 1
