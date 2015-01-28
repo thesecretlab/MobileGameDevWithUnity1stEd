@@ -15,6 +15,8 @@ public class GnomeComponents : MonoBehaviour {
 
 	public float delayBeforeRemoving = 3.0f;
 
+	public GameObject bloodFountainPrefab;
+
 	bool dead = false;
 
 	public void SetHoldingTreasure(bool holding) {
@@ -28,34 +30,14 @@ public class GnomeComponents : MonoBehaviour {
 		} else {
 			holdingArm.sprite = armHoldingEmpty;
 		}
-
 	}
 
-	void DetachComponents() {
-		// find all child objects, and disconnect their joints
-		
-		foreach (Transform part in transform) {
-			
-			foreach (Joint2D joint in part.GetComponentsInChildren<Joint2D>()) {
-				if (Random.Range(0, 2) == 0) {
-					Destroy (joint);
-				}
-				
-			}
-			
-		}
-
-		// Add a Remove-After-Delay component
-		var remove = gameObject.AddComponent<RemoveAfterDelay>();
-		remove.delay = delayBeforeRemoving;
-
-		// Add the ghost
-
-		Instantiate(ghostPrefab, transform.position, Quaternion.identity);
-
+	public enum DamageType {
+		Slicing,
+		Burning
 	}
 
-	public void DestroyGnome() {
+	public void DestroyGnome(DamageType type) {
 
 		if (deathPrefab != null) {
 			Instantiate(deathPrefab, transform.position, transform.rotation);
@@ -64,30 +46,55 @@ public class GnomeComponents : MonoBehaviour {
 		if (GameManager.instance.gnomeInvincible)
 			return;
 
-		dead = true;
-
-		foreach (BodyPart part in GetComponentsInChildren<BodyPart>()) {
-			part.Detach();
-		}
-
-		DetachComponents();
-
-
-
-	}
-
-	public void BurnGnome() {
-
-		if (GameManager.instance.gnomeInvincible)
-			return;
+		SetHoldingTreasure(false);
 
 		dead = true;
 
+		// find all child objects, and randomly disconnect their joints
 		foreach (BodyPart part in GetComponentsInChildren<BodyPart>()) {
-			part.Burn();
-		}
 
-		DetachComponents();
+			bool shouldDetach = Random.Range (0, 2) == 0;
+
+			if (shouldDetach) {
+
+				switch (type) {
+				case DamageType.Slicing:
+
+					part.Detach ();
+
+					if (part.bloodFountainOrigin != null) {
+						// Attach a blood fountain for this detached part
+						GameObject fountain = Instantiate(bloodFountainPrefab, 
+						                                  part.bloodFountainOrigin.position, 
+						                                  part.bloodFountainOrigin.rotation) as GameObject;
+
+						fountain.transform.SetParent(this.transform, true);
+					}
+
+					break;
+
+				case DamageType.Burning:
+
+					part.Burn ();
+					break;
+				}
+
+				foreach (Joint2D joint in part.GetComponentsInChildren<Joint2D>()) {
+					Destroy (joint);
+				}
+			}
+			
+
+			
+		}
+		
+		// Add a Remove-After-Delay component to this object
+		var remove = gameObject.AddComponent<RemoveAfterDelay>();
+		remove.delay = delayBeforeRemoving;
+		
+		// Add the ghost		
+		Instantiate(ghostPrefab, transform.position, Quaternion.identity);
+
 	}
 
 

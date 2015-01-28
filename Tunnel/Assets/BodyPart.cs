@@ -6,6 +6,7 @@ public class BodyPart : MonoBehaviour {
 
 	public Sprite detachedSprite;
 	public Sprite burnedSprite;
+	public Transform bloodFountainOrigin;
 
 	public void Detach() {
 		if (detachedSprite != null) {

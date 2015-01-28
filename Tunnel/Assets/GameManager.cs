@@ -122,7 +122,7 @@ public class GameManager : MonoBehaviour {
 
 	public void TrapTouched() {
 		currentGnome.SetHoldingTreasure(false);
-		currentGnome.DestroyGnome();
+		currentGnome.DestroyGnome(GnomeComponents.DamageType.Slicing);
 
 		if (gnomeInvincible)
 			return;
@@ -140,7 +140,7 @@ public class GameManager : MonoBehaviour {
 
 	public void FireTrapTouched() {
 		currentGnome.SetHoldingTreasure(false);
-		currentGnome.BurnGnome();
+		currentGnome.DestroyGnome(GnomeComponents.DamageType.Burning);
 
 		if (gnomeInvincible)
 			return;
