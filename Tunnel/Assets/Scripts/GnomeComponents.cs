@@ -70,20 +70,26 @@ public class GnomeComponents : MonoBehaviour {
 				// 1 in 3 chance of burning
 				bool shouldBurn = Random.Range (0, 2) == 0;
 				if (shouldBurn) {
-					part.Burn();
+					part.ApplyDamageSprite(type);
 				}
+			} else {
+				part.ApplyDamageSprite (type);
+
 			}
+
+			part.Detach ();
 
 			// 1 in 3 chance of separating from body
 			bool shouldDetach = Random.Range (0, 2) == 0;
 
 			if (shouldDetach) {
 
+
+
 				// If we're separating, and the damage type was Slicing,
 				// add a blood fountain
 
 				if (type == DamageType.Slicing) {
-					part.Detach ();
 
 					if (part.bloodFountainOrigin != null) {
 						// Attach a blood fountain for this detached part

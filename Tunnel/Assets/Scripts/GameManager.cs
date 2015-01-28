@@ -121,13 +121,14 @@ public class GameManager : MonoBehaviour {
 	}
 
 	public void TrapTouched() {
+
 		currentGnome.DestroyGnome(GnomeComponents.DamageType.Slicing);
 
-		if (gnomeInvincible)
-			return;
+		if (gnomeInvincible == false) {
+			StartCoroutine("ResetAfterDelay");
+			StopGnome();
+		}
 
-		StopGnome();
-		StartCoroutine("ResetAfterDelay");
 
 	}
 
@@ -138,13 +139,16 @@ public class GameManager : MonoBehaviour {
 	}
 
 	public void FireTrapTouched() {
+
 		currentGnome.DestroyGnome(GnomeComponents.DamageType.Burning);
 
-		if (gnomeInvincible)
-			return;
-        
-		StopGnome ();
-		StartCoroutine("ResetAfterDelay");
+		
+		if (gnomeInvincible == false) {
+			StartCoroutine("ResetAfterDelay");
+			StopGnome();
+		}
+
+
 
 	}
 
