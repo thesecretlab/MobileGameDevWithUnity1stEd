@@ -6,8 +6,8 @@ public class Rope : MonoBehaviour {
 
 	List<GameObject> ropeSegments = new List<GameObject>();
 
-	bool isIncreasing = false;
-	bool isDecreasing = false;
+	public bool isIncreasing { get; set; }
+	public bool isDecreasing { get; set; }
 
 	// the gnome
 	public Rigidbody2D connectedObject;
@@ -148,17 +148,5 @@ public class Rope : MonoBehaviour {
 		lineRenderer.SetPosition(ropeSegments.Count + 1, connectedObject.transform.TransformPoint(connectedObjectJoint.anchor));
 
 	}
-
-	public void SetIncreasing(bool increasing) {
-		isIncreasing = increasing;
-	}
-
-	public void SetDecreasing(bool decreasing) {
-		isDecreasing = decreasing;
-	}
-
-
-
-
 
 }
