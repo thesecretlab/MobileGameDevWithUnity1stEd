@@ -6,7 +6,7 @@ PlayerSettings:
   serializedVersion: 6
   AndroidProfiler: 0
   defaultScreenOrientation: 0
-  targetDevice: 0
+  targetDevice: 2
   targetGlesGraphics: 1
   targetIOSGraphics: -1
   targetResolution: 0

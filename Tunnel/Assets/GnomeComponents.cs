@@ -20,7 +20,8 @@ public class GnomeComponents : MonoBehaviour {
 	bool dead = false;
 
 	public void SetHoldingTreasure(bool holding) {
-
+		Debug.Break ();
+		Debug.Log (StackTraceUtility.ExtractStackTrace());
 		if (dead == true) {
 			return;
 		}
