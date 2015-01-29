@@ -695,7 +695,7 @@ ParticleSystem:
         m_PostInfinity: 2
       minMaxState: 0
     startSpeed:
-      scalar: .25
+      scalar: .0500000007
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -884,7 +884,7 @@ ParticleSystem:
     serializedVersion: 2
     enabled: 1
     type: 10
-    radius: 1
+    radius: .100000001
     angle: 25
     length: 5
     boxX: 1
@@ -898,7 +898,7 @@ ParticleSystem:
     enabled: 1
     m_Type: 0
     rate:
-      scalar: .930000007
+      scalar: .300000012
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -1685,7 +1685,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 95361827}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 1.33000004, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1163112172}
@@ -4195,7 +4195,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1163112170}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -51.2900009, z: 0}
+  m_LocalPosition: {x: 0, y: -52, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 95361829}
@@ -4274,9 +4274,9 @@ BoxCollider2D:
   m_GameObject: {fileID: 1163112170}
   m_Enabled: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: .754999995}
   serializedVersion: 2
   m_Size: {x: 1.10000002, y: 1.50999999}
 --- !u!114 &1163112175
