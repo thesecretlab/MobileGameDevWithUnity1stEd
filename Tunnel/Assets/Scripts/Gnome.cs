@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class GnomeComponents : MonoBehaviour {
+public class Gnome : MonoBehaviour {
 
 	public Rigidbody2D ropeBody;
 
@@ -21,16 +21,24 @@ public class GnomeComponents : MonoBehaviour {
 
 	bool dead = false;
 
-	public void SetHoldingTreasure(bool holding) {
+	bool _holdingTreasure = false;
 
-		if (dead == true) {
-			return;
+	public bool holdingTreasure {
+		get {
+			return _holdingTreasure;
 		}
+		set {
+			if (dead == true) {
+				return;
+			}
 
-		if (holding) {
-			holdingArm.sprite = armHoldingTreasure;
-		} else {
-			holdingArm.sprite = armHoldingEmpty;
+			_holdingTreasure = value;
+			
+			if (_holdingTreasure) {
+				holdingArm.sprite = armHoldingTreasure;
+			} else {
+				holdingArm.sprite = armHoldingEmpty;
+			}
 		}
 	}
 
@@ -59,7 +67,7 @@ public class GnomeComponents : MonoBehaviour {
 		if (GameManager.instance.gnomeInvincible)
 			return;
 
-		SetHoldingTreasure(false);
+		holdingTreasure = false;
 
 		dead = true;
 

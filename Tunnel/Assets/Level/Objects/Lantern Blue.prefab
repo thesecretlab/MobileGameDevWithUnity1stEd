@@ -183,7 +183,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 196716}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ee354833ca9f41c0840da6fd583fbe1, type: 3}
+  m_Script: {fileID: 11500000, guid: 6d720d5929c5f410b806a01ea179c5b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   minimumBrightness: .239999995
@@ -197,7 +197,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 150206}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ee354833ca9f41c0840da6fd583fbe1, type: 3}
+  m_Script: {fileID: 11500000, guid: 6d720d5929c5f410b806a01ea179c5b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   minimumBrightness: .239999995

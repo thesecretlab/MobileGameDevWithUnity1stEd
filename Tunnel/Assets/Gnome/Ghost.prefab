@@ -9,11 +9,11 @@ GameObject:
   m_Component:
   - 4: {fileID: 428348}
   - 212: {fileID: 21270808}
-  - 114: {fileID: 11495830}
   - 114: {fileID: 11407998}
   - 95: {fileID: 9592066}
   - 114: {fileID: 11406152}
   - 82: {fileID: 8296480}
+  - 114: {fileID: 11470436}
   m_Layer: 0
   m_Name: Ghost
   m_TagString: Untagged
@@ -127,7 +127,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 149986}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ee354833ca9f41c0840da6fd583fbe1, type: 3}
+  m_Script: {fileID: 11500000, guid: 6d720d5929c5f410b806a01ea179c5b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   minimumBrightness: .0399999991
@@ -145,7 +145,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   delay: 20
---- !u!114 &11495830
+--- !u!114 &11470436
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -153,10 +153,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 149986}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5340103300cf04224b3bc592574d33c0, type: 3}
+  m_Script: {fileID: 11500000, guid: 067684417b3cb4a27aeebbb9d50b2912, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3.75
+  direction: {x: 0, y: 1, z: 0}
 --- !u!212 &21270808
 SpriteRenderer:
   m_ObjectHideFlags: 1

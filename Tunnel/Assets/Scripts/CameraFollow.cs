@@ -1,20 +1,39 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+// Adjusts the camera to always match the Y-position of a target object,
+// within certain limits.
 public class CameraFollow : MonoBehaviour {
 
+	// The object we want to match the Y position of.
 	public GameObject target;
-	public float topLimit;
-	public float bottomLimit;
 
+	// The highest point the camera can go.
+	public float topLimit = 0.0f;
+
+	// The lowest point the camera can go.
+	public float bottomLimit = 10.0f;
+
+	// How quickly we should move towards the target.
+	public float followSpeed = 0.5f;
+
+	// After all objects have updated position, work out where this camera should be
 	void LateUpdate () {
 
+		// If we have a target...
 		if (target != null) {
+
+			// Get its position
 			Vector3 newPosition = this.transform.position;
-			
-			newPosition.y = Mathf.Lerp (newPosition.y, target.transform.position.y, 0.5f);
+
+			// Work out where this camera should be
+			newPosition.y = Mathf.Lerp (newPosition.y, target.transform.position.y, followSpeed);
+
+			// Clamp this new location to within our limits
 			newPosition.y = Mathf.Min(newPosition.y, topLimit);
 			newPosition.y = Mathf.Max(newPosition.y, bottomLimit);
+
+			// Update our location
 			transform.position = newPosition;
 		}
 
@@ -22,6 +41,7 @@ public class CameraFollow : MonoBehaviour {
 
 	}
 
+	// When selected in the editor, draw a line from the top limit to the bottom.
 	void OnDrawGizmosSelected() {
 		Gizmos.color = Color.yellow;
 

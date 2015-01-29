@@ -3207,6 +3207,7 @@ MonoBehaviour:
   target: {fileID: 0}
   topLimit: .230000004
   bottomLimit: -47
+  followSpeed: .5
 --- !u!1001 &585578533
 Prefab:
   m_ObjectHideFlags: 0
@@ -3670,7 +3671,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c35c2279ac6c74a469018edb36dba0e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  treasure: {fileID: 1163112170}
   startingPoint: {fileID: 700965901}
   rope: {fileID: 1538698780}
   fade: {fileID: 1924498413}
@@ -4287,7 +4287,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1163112170}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8caad4dff3c0848c4920f93c970c838a, type: 3}
+  m_Script: {fileID: 11500000, guid: c928f0a88cc6440bca2233752a8db887, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   onReset:
@@ -5329,7 +5329,6 @@ GameObject:
   - 50: {fileID: 1538698778}
   - 114: {fileID: 1538698780}
   - 120: {fileID: 1538698781}
-  - 114: {fileID: 1538698782}
   m_Layer: 0
   m_Name: Rope
   m_TagString: Untagged
@@ -5375,9 +5374,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c581a5dc4a0dc46f2959c9eaedd26382, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ropeSegmentPrefab: {fileID: 100000, guid: ca0f875a193834390b4b9deb5f94f336, type: 2}
   connectedObject: {fileID: 0}
   maxRopeSegmentLength: 1
-  ropeSegmentPrefab: {fileID: 100000, guid: ca0f875a193834390b4b9deb5f94f336, type: 2}
   ropeSpeed: 4
 --- !u!120 &1538698781
 LineRenderer:
@@ -5420,46 +5419,6 @@ LineRenderer:
       serializedVersion: 2
       rgba: 4294967295
   m_UseWorldSpace: 1
---- !u!114 &1538698782
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1538698777}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8caad4dff3c0848c4920f93c970c838a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  onReset:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1538698780}
-        m_MethodName: set_isDecreasing
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, Version=0.0.0.0,
-            Culture=neutral, PublicKeyToken=null
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1538698780}
-        m_MethodName: set_isIncreasing
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, Version=0.0.0.0,
-            Culture=neutral, PublicKeyToken=null
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
 --- !u!1001 &1541178267
 Prefab:
   m_ObjectHideFlags: 0
@@ -5635,6 +5594,18 @@ Prefab:
       propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
       objectReference: {fileID: 0}
+    - target: {fileID: 11496470, guid: 6f68a011f19fc4d568e065de031f3ea2, type: 2}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11496470, guid: 6f68a011f19fc4d568e065de031f3ea2, type: 2}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11496470, guid: 6f68a011f19fc4d568e065de031f3ea2, type: 2}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 802054040}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6f68a011f19fc4d568e065de031f3ea2, type: 2}
   m_IsPrefabParent: 0
@@ -6313,7 +6284,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1857434158
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6864,7 +6835,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Sprite: {fileID: 21300000, guid: 0adc3d4f916d34a9d8304dc984b9f1c2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8c53914e6fa7a4308a7ea1e097c36555, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1

@@ -1,20 +1,24 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-// Require a 2D physicsbody
+// Uses the input manager to apply sideways forces to an object.
+// Used to make the gnome swing side-to-side.
 [RequireComponent (typeof(Rigidbody2D))]
 public class Swinging : MonoBehaviour {
 
+	// How much should we swing by? Bigger numbers = more swing
 	public float swingSensitivity = 1.0f;
 
+	// Use FixedUpdate instead of Update, in order to play better with 
+	// the physics engine
 	void FixedUpdate() {
-		// get the swing amount
+		// Get the tilt amount from the InputManager
 		float swing = InputManager.instance.sidewaysMotion;
 
-		// calculate a force
+		// Calculate a force to apply
 		Vector2 force = new Vector2(swing * swingSensitivity, 0);
 
-		// apply the force to the rigidbody
+		// Apply the force
 		GetComponent<Rigidbody2D>().AddForce(force);
 	}
 
