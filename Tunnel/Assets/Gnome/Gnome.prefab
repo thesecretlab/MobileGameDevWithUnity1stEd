@@ -9,10 +9,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 400008}
   - 114: {fileID: 11400000}
-  - 61: {fileID: 6100000}
-  - 50: {fileID: 5000008}
-  - 232: {fileID: 23200000}
-  - 114: {fileID: 11438534}
   - 82: {fileID: 8205614}
   m_Layer: 0
   m_Name: Gnome
@@ -84,6 +80,7 @@ GameObject:
   - 50: {fileID: 5015834}
   - 114: {fileID: 11446858}
   - 58: {fileID: 5868472}
+  - 114: {fileID: 11452560}
   m_Layer: 0
   m_Name: Body
   m_TagString: Player
@@ -347,7 +344,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100008}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -69.9700012, y: -19.8999996, z: 0}
+  m_LocalPosition: {x: -.519999981, y: 2.21000004, z: 0}
   m_LocalScale: {x: .200000003, y: .200000003, z: .200000003}
   m_Children:
   - {fileID: 468682}
@@ -599,21 +596,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 419156}
   m_RootOrder: 0
---- !u!50 &5000008
-Rigidbody2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100008}
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: .0500000007
-  m_GravityScale: 1
-  m_FixedAngle: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
 --- !u!50 &5013678
 Rigidbody2D:
   m_ObjectHideFlags: 1
@@ -812,19 +794,6 @@ PolygonCollider2D:
       - {x: -.735422254, y: -5.04649639}
       - {x: -1.6618861, y: -3.93381381}
       - {x: -.774999619, y: -.194561124}
---- !u!61 &6100000
-BoxCollider2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100008}
-  m_Enabled: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
 --- !u!82 &8205614
 AudioSource:
   m_ObjectHideFlags: 1
@@ -955,18 +924,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotation: -90
---- !u!114 &11438534
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100008}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b80bc2d467f494e27b694623edf99529, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  swingSensitivity: 100
 --- !u!114 &11446468
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1009,6 +966,18 @@ MonoBehaviour:
   detachedSprite: {fileID: 21300000, guid: 2b198ff5f6b074e87a1008a5aa817eaf, type: 3}
   burnedSprite: {fileID: 21300000, guid: d9af2a0bf4dfa48d8aa416b0730053e0, type: 3}
   bloodFountainOrigin: {fileID: 411084}
+--- !u!114 &11452560
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 116912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b80bc2d467f494e27b694623edf99529, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  swingSensitivity: 100
 --- !u!114 &11484404
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1289,19 +1258,6 @@ SpringJoint2D:
   m_Distance: .00999999978
   m_DampingRatio: 0
   m_Frequency: 5
---- !u!232 &23200000
-DistanceJoint2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100008}
-  m_Enabled: 1
-  m_CollideConnected: 0
-  m_ConnectedRigidBody: {fileID: 5015834}
-  m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 0, y: 0}
-  m_Distance: .00499999989
-  m_MaxDistanceOnly: 0
 --- !u!233 &23316214
 HingeJoint2D:
   m_ObjectHideFlags: 1

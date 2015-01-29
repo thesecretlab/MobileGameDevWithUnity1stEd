@@ -5533,6 +5533,10 @@ Prefab:
       propertyPath: gameOverMenu
       value: 
       objectReference: {fileID: 29346752}
+    - target: {fileID: 11478024, guid: ecf43fd1df5834eacbc28efca5031033, type: 2}
+      propertyPath: gnomePrefab
+      value: 
+      objectReference: {fileID: 100008, guid: 6f22336dde32a4cd4a0403bb67f511c8, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ecf43fd1df5834eacbc28efca5031033, type: 2}
   m_IsPrefabParent: 0

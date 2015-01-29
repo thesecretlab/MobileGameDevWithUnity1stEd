@@ -23,7 +23,7 @@ public class Rope : MonoBehaviour {
 	public float maxRopeSegmentLength = 1.0f;
 
 	// How quickly we should pay out new rope.
-	public float ropeSpeed = 1.0f;
+	public float ropeSpeed = 4.0f;
 
 	// The LineRenderer that renders the actual rope.
 	LineRenderer lineRenderer;
@@ -60,6 +60,9 @@ public class Rope : MonoBehaviour {
 
 		// Create the new rope segment.
 		GameObject segment = (GameObject)Instantiate(ropeSegmentPrefab,  this.transform.position, Quaternion.identity);
+
+		// Make the rope segment be a child of this object, and make it keep its world position
+		segment.transform.SetParent(this.transform, true);
 		
 		// Get the rigidbody from the segment
 		Rigidbody2D segmentBody = segment.GetComponent<Rigidbody2D>();
@@ -167,26 +170,30 @@ public class Rope : MonoBehaviour {
 
 		}
 
-		// The line renderer draws lines from a collection of points. These points
-		// need to be kept in sync with the positions of the rop segments.
-
-		// The number of line renderer verticies = number of rope segments, plus a 
-		// point at the top for the rope anchor, plus a point at the bottom for the gnome
-		lineRenderer.SetVertexCount(ropeSegments.Count + 2);
-
-		// Top vertex is always at the rope's location.
-		lineRenderer.SetPosition(0, this.transform.position);
-
-		// For every rope segment we have, make the corresponding line renderer vertex
-		// be at its position.
-		for (int i = 0; i < ropeSegments.Count; i++) {
-			lineRenderer.SetPosition(i+1, ropeSegments[i].transform.position);
+		if (lineRenderer != null) {
+			// The line renderer draws lines from a collection of points. These points
+			// need to be kept in sync with the positions of the rop segments.
+			
+			// The number of line renderer verticies = number of rope segments, plus a 
+			// point at the top for the rope anchor, plus a point at the bottom for the gnome
+			lineRenderer.SetVertexCount(ropeSegments.Count + 2);
+			
+			// Top vertex is always at the rope's location.
+			lineRenderer.SetPosition(0, this.transform.position);
+			
+			// For every rope segment we have, make the corresponding line renderer vertex
+			// be at its position.
+			for (int i = 0; i < ropeSegments.Count; i++) {
+				lineRenderer.SetPosition(i+1, ropeSegments[i].transform.position);
+			}
+			
+			// Last point is at the connected object's anchor. 
+			SpringJoint2D connectedObjectJoint = connectedObject.GetComponent<SpringJoint2D>();
+			lineRenderer.SetPosition(ropeSegments.Count + 1, 
+			                         connectedObject.transform.TransformPoint(connectedObjectJoint.anchor));
 		}
 
-		// Last point is at the connected object's anchor. 
-		SpringJoint2D connectedObjectJoint = connectedObject.GetComponent<SpringJoint2D>();
-		lineRenderer.SetPosition(ropeSegments.Count + 1, 
-		                         connectedObject.transform.TransformPoint(connectedObjectJoint.anchor));
+
 
 	}
 
