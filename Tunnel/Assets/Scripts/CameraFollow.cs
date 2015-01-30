@@ -6,13 +6,13 @@ using System.Collections;
 public class CameraFollow : MonoBehaviour {
 
 	// The object we want to match the Y position of.
-	public GameObject target;
+	public Transform target;
 
 	// The highest point the camera can go.
-	public float topLimit = 0.0f;
+	public float topLimit = 10.0f;
 
 	// The lowest point the camera can go.
-	public float bottomLimit = 10.0f;
+	public float bottomLimit = -10.0f;
 
 	// How quickly we should move towards the target.
 	public float followSpeed = 0.5f;
@@ -27,7 +27,7 @@ public class CameraFollow : MonoBehaviour {
 			Vector3 newPosition = this.transform.position;
 
 			// Work out where this camera should be
-			newPosition.y = Mathf.Lerp (newPosition.y, target.transform.position.y, followSpeed);
+			newPosition.y = Mathf.Lerp (newPosition.y, target.position.y, followSpeed);
 
 			// Clamp this new location to within our limits
 			newPosition.y = Mathf.Min(newPosition.y, topLimit);

@@ -3373,7 +3373,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
 --- !u!4 &710679599
 Transform:
   m_PrefabParentObject: {fileID: 446922, guid: abefdfae85cd74a3cbc6af98279f65f5, type: 2}
@@ -4351,11 +4351,8 @@ Prefab:
       propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 802054041}
-    - target: {fileID: 400000, guid: 69686b0ae7c82474bab32fb8b7185a97, type: 2}
-      propertyPath: m_LocalScale.y
-      value: .376473427
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 11436606, guid: 69686b0ae7c82474bab32fb8b7185a97, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 69686b0ae7c82474bab32fb8b7185a97, type: 2}
   m_IsPrefabParent: 0
 --- !u!1001 &1232213456
@@ -4950,7 +4947,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1454294470
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6376,6 +6373,7 @@ GameObject:
   - 222: {fileID: 1924498412}
   - 114: {fileID: 1924498411}
   - 114: {fileID: 1924498413}
+  - 114: {fileID: 1924498414}
   m_Layer: 5
   m_Name: Fade
   m_TagString: Untagged
@@ -6438,6 +6436,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f2d7f74848a34b699e74f7e8a156524, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1924498414
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1924498409}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c928f0a88cc6440bca2233752a8db887, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onReset:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1924498413}
+        m_MethodName: FadeIn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
 --- !u!1 &1998069957
 GameObject:
   m_ObjectHideFlags: 0

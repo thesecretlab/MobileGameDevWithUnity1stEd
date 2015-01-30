@@ -130,8 +130,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d720d5929c5f410b806a01ea179c5b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minimumBrightness: .0399999991
-  maximumBrightness: .75999999
+  minimumBrightness: .0500000007
+  maximumBrightness: .75
   flickerStrength: .349999994
 --- !u!114 &11407998
 MonoBehaviour:

@@ -89,6 +89,7 @@ public class GameManager : Singleton<GameManager> {
 
 	void CreateNewGnome() {
 
+
 		// Remove the current gnome, if there is one
 		StopGnome();
 
@@ -109,7 +110,7 @@ public class GameManager : Singleton<GameManager> {
 		rope.ResetLength();
 
 		// Tell the cameraFollow to start tracking the new gnome object
-		cameraFollow.target = newGnome;
+		cameraFollow.target = currentGnome.cameraFollowTarget;
 
 	}
 
@@ -117,9 +118,14 @@ public class GameManager : Singleton<GameManager> {
 	public void Reset() {
 
 		// Turn off the menus, turn on the gameplay UI
-		gameOverMenu.gameObject.SetActive(false);
-		mainMenu.gameObject.SetActive(false);
-		gameplayMenu.gameObject.SetActive(true);
+		if (gameOverMenu)
+			gameOverMenu.gameObject.SetActive(false);
+
+		if (mainMenu)
+			mainMenu.gameObject.SetActive(false);
+
+		if (gameplayMenu)
+			gameplayMenu.gameObject.SetActive(true);
 
 		// Find all Resettable components and tell them to reset
 		var resetObjects = FindObjectsOfType<Resettable>();
@@ -130,10 +136,6 @@ public class GameManager : Singleton<GameManager> {
 
 		// Make a new gnome
 		CreateNewGnome();
-
-		// Make the Fade go full-alpha and then fade out over 0.5 seconds
-		fade.SetAlpha(1.0f);
-		fade.FadeTo(0.0f, 0.5f);
 
 		// Un-pause the game
 		Time.timeScale = 1.0f;
@@ -158,13 +160,19 @@ public class GameManager : Singleton<GameManager> {
 			audio.PlayOneShot(this.gnomeDiedSound);
 		}
 
-		// Tell the gnome that it died
-		currentGnome.DestroyGnome(damageType);
+		// Show the damage effect
+		currentGnome.ShowDamageEffect(damageType);
+
 
 
 		// If we're not invincible, reset the game and make
 		// the gnome not be the current player.
 		if (gnomeInvincible == false) {
+
+			// Tell the gnome that it died
+			currentGnome.DestroyGnome(damageType);
+
+			// Reset the game
 			StartCoroutine("ResetAfterDelay");
 			StopGnome();
 		}
@@ -193,8 +201,11 @@ public class GameManager : Singleton<GameManager> {
 			Time.timeScale = 0.0f;
 
 			// Turn off the game over menu, and turn on the game over screen!
-			gameOverMenu.gameObject.SetActive(true);
-			gameplayMenu.gameObject.SetActive(false);
+			if (gameOverMenu)
+				gameOverMenu.gameObject.SetActive(true);
+
+			if (gameplayMenu)
+				gameplayMenu.gameObject.SetActive(false);
 		}
 	}
 

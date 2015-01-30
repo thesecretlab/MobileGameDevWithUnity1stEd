@@ -3,6 +3,9 @@ using System.Collections;
 
 public class Gnome : MonoBehaviour {
 
+	// The object that the camera should follow.
+	public Transform cameraFollowTarget;
+
 	public Rigidbody2D ropeBody;
 
 	public Sprite armHoldingEmpty;
@@ -33,12 +36,15 @@ public class Gnome : MonoBehaviour {
 			}
 
 			_holdingTreasure = value;
-			
-			if (_holdingTreasure) {
-				holdingArm.sprite = armHoldingTreasure;
-			} else {
-				holdingArm.sprite = armHoldingEmpty;
+
+			if (holdingArm != null) {
+				if (_holdingTreasure) {
+					holdingArm.sprite = armHoldingTreasure;
+				} else {
+					holdingArm.sprite = armHoldingEmpty;
+				}
 			}
+
 		}
 	}
 
@@ -47,25 +53,24 @@ public class Gnome : MonoBehaviour {
 		Burning
 	}
 
-	public void DestroyGnome(DamageType type) {
-
+	public void ShowDamageEffect(DamageType type) {
 		switch (type) {
-
+			
 		case DamageType.Burning:
 			if (flameDeathPrefab != null) {
-				Instantiate(flameDeathPrefab, transform.position, transform.rotation);
+				Instantiate(flameDeathPrefab, cameraFollowTarget.position, cameraFollowTarget.rotation);
 			}
 			break;
-
+			
 		case DamageType.Slicing:
 			if (deathPrefab != null) {
-				Instantiate(deathPrefab, transform.position, transform.rotation);
+				Instantiate(deathPrefab, cameraFollowTarget.position, cameraFollowTarget.rotation);
 			}
 			break;
 		}
+	}
 
-		if (GameManager.instance.gnomeInvincible)
-			return;
+	public void DestroyGnome(DamageType type) {
 
 		holdingTreasure = false;
 
@@ -104,13 +109,13 @@ public class Gnome : MonoBehaviour {
 
 				if (type == DamageType.Slicing) {
 
-					if (part.bloodFountainOrigin != null) {
+					if (part.bloodFountainOrigin != null && bloodFountainPrefab != null) {
 						// Attach a blood fountain for this detached part
 						GameObject fountain = Instantiate(bloodFountainPrefab, 
 						                                  part.bloodFountainOrigin.position, 
 						                                  part.bloodFountainOrigin.rotation) as GameObject;
 
-						fountain.transform.SetParent(this.transform, true);
+						fountain.transform.SetParent(this.cameraFollowTarget, false);
 					}
 				}
 
@@ -130,6 +135,13 @@ public class Gnome : MonoBehaviour {
 	}
 
 	IEnumerator ReleaseGhost() {
+
+		// No ghost? Bail.
+		if (ghostPrefab == null) {
+			return false;
+		}
+
+		// Wait for delayBeforeReleasingGhost seconds
 		yield return new WaitForSeconds(delayBeforeReleasingGhost);
 
 		// Add the ghost		
