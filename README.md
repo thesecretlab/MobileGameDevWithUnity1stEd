@@ -6,12 +6,18 @@ Source code for <a href="http://secretlab.com.au">Secret Lab's</a> O'Reilly Medi
 
 You can use any of the code, art, sound or other resources in your own projects, 
 for free. However, if you do, you need to include an acknowledgement in your game.
-Please include the following text:
+
+Please include the following text for the 2D Game:
 
     Includes portions of 'Gnome's Well That Ends Well', © 2015 Secret Lab. 
     For more information, see http://secretlab.com.au.
 
-After this line, include a copy of the license that appears below:
+Please include the following text for the 3D Game:
+
+    Includes portions of 'Rock Fall', © 2015 Secret Lab. 
+    For more information, see http://secretlab.com.au.
+
+After the acknowledgement line, include a copy of the license that appears below:
 
 ## License
 
