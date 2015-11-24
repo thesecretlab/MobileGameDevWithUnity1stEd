@@ -1,0 +1,99 @@
+fileFormatVersion: 2
+guid: 61094f710502f4b468597f73e0705bdd
+timeCreated: 1434788268
+licenseType: Pro
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: Dome_Greeble_Spike_Rotation
+    100002: Empty
+    100004: Piers_Rotation
+    100006: //RootNode
+    100008: Station
+    100010: Underdome_Greebles_001
+    100012: Underdome_Greebles_002
+    100014: Underdome_Rotation
+    400000: Dome_Greeble_Spike_Rotation
+    400002: Empty
+    400004: Piers_Rotation
+    400006: //RootNode
+    400008: Station
+    400010: Underdome_Greebles_001
+    400012: Underdome_Greebles_002
+    400014: Underdome_Rotation
+    2300000: Station
+    2300002: Underdome_Greebles_001
+    2300004: Underdome_Greebles_002
+    3300000: Station
+    3300002: Underdome_Greebles_001
+    3300004: Underdome_Greebles_002
+    4300000: Underdome_Greebles_002
+    4300002: Underdome_Greebles_001
+    4300004: Station
+    6400000: Station
+    6400002: Underdome_Greebles_001
+    6400004: Underdome_Greebles_002
+    7400000: Default Take
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 1
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 1
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 0
+    splitTangentsAcrossUV: 0
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
