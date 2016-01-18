@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
-using UnityEngine.Events;
 using System.Collections;
+
+// BEGIN 2d_signalontouch
+using UnityEngine.Events;
 
 // Invokes a UnityEvent when the Player collides with this object.
 [RequireComponent (typeof(Collider2D))]
@@ -45,3 +47,4 @@ public class SignalOnTouch : MonoBehaviour {
 
 
 }
+// END 2d_signalontouch

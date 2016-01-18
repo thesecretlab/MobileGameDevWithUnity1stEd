@@ -1,12 +1,16 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+
+// BEGIN 3d_inputmanager
 public class InputManager : Singleton<InputManager> {
 
 	public Vector3 rotationRate;
 
 	public VirtualJoystick steering;
 
+
+	// BEGIN 3d_inputmanager_weapons
 	public float fireRate = 0.2f;
 
 	private ShipWeapons weapons;
@@ -51,6 +55,6 @@ public class InputManager : Singleton<InputManager> {
 		}
 
 	}
-
-
+	// END 3d_inputmanager_weapons
 }
+// END 3d_inputmanager

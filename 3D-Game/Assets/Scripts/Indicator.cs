@@ -1,11 +1,15 @@
 ﻿using UnityEngine;
-using UnityEngine.UI;
 using System.Collections;
+
+// BEGIN 3d_indicator
+using UnityEngine.UI;
 
 public class Indicator : MonoBehaviour {
 
+	// How far we should be from the screen edges.
 	public int margin = 10;
 
+	// Our image's tint colour.
 	public Color color {
 		set {
 			GetComponent<Image>().color = value;
@@ -15,11 +19,16 @@ public class Indicator : MonoBehaviour {
 		}
 	}
 	
+	// The object we're tracking.
 	public Transform target;
+	
+	// Measure the distance from 'target' to this transform.
 	public Transform showDistanceTo;
 
+	// The label that shows the distance we're measuring.
 	public Text distanceLabel;
 
+	// On start, wait a frame before appearing to prevent visual glitches
 	IEnumerator Start() {
 		distanceLabel.enabled = false;
 		GetComponent<Image>().enabled = false;
@@ -27,14 +36,18 @@ public class Indicator : MonoBehaviour {
 		GetComponent<Image>().enabled = true;
 	}
 
+	// Update the indicator's position every frame
 	void Update()
 	{
 
+		// Is our target gone? Then we should go too
 		if (target == null) {
 			Destroy (gameObject);
 			return;
 		}
 
+		// If we have a target for calculating distance, then calculate it and
+		// display it in the distanceLabel
 		if (showDistanceTo != null) {
 			distanceLabel.enabled = true;
 			var distance = (int)Vector3.Magnitude(showDistanceTo.position - target.position);
@@ -54,6 +67,7 @@ public class Indicator : MonoBehaviour {
 			viewportPoint.x *= -Mathf.Infinity;
 		} 
 
+		// Work out where in view-space we should be
 		var screenPoint = Camera.main.ViewportToScreenPoint(viewportPoint);
 
 		// Clamp to screen edges
@@ -61,7 +75,7 @@ public class Indicator : MonoBehaviour {
 		screenPoint.y = Mathf.Clamp(screenPoint.y, margin, Screen.height - margin * 2);
 
 
-		// Work out where in the canvas we should be
+		// Work out where in the canvas-space the view-space coordinate is
 		var localPosition = new Vector2();
 		RectTransformUtility.ScreenPointToLocalPointInRectangle(transform.parent.GetComponent<RectTransform>(), 
 		                                                        screenPoint, 
@@ -77,3 +91,4 @@ public class Indicator : MonoBehaviour {
 
 	}
 }
+// END 3d_indicator

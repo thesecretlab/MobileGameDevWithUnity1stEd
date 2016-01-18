@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+// BEGIN 2d_bodypart
 [RequireComponent (typeof(SpriteRenderer))]
 public class BodyPart : MonoBehaviour {
 
@@ -84,3 +85,4 @@ public class BodyPart : MonoBehaviour {
 	}
 
 }
+// END 2d_bodypart

@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿// BEGIN 2d_singleton
+
+using UnityEngine;
 using System.Collections;
 
 // This class allows other objects to refer to a single shared object.
@@ -38,3 +40,4 @@ public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
 	}
 
 }
+// END 2d_singleton

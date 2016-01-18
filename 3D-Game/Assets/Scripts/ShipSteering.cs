@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+// BEGIN 3d_shipsteering
 public class ShipSteering : MonoBehaviour {
 
 	public float turnRate = 2.0f;
@@ -44,3 +45,4 @@ public class ShipSteering : MonoBehaviour {
 
 	}
 }
+// END 3d_shipsteering

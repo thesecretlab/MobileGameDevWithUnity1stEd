@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+// BEGIN 3d_damageoncollide
 public class DamageOnCollide : MonoBehaviour {
 
     // The amount of damage we'll deal to anything we hit.
@@ -31,3 +32,4 @@ public class DamageOnCollide : MonoBehaviour {
 		HitObject(collision.gameObject);
 	}
 }
+// END 3d_damageoncollide

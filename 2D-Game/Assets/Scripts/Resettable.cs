@@ -1,5 +1,7 @@
 using UnityEngine;
 using System.Collections;
+
+// BEGIN 2d_resettable
 using UnityEngine.Events;
 
 // Contains a UnityEvent that can be used to reset the state of this object.
@@ -15,3 +17,4 @@ public class Resettable : MonoBehaviour {
 		onReset.Invoke();
 	}
 }
+// END 2d_resettable

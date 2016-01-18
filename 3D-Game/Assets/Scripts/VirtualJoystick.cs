@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
+
+// BEGIN 3d_virtualjoystick
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
@@ -75,3 +77,4 @@ public class VirtualJoystick : MonoBehaviour, IBeginDragHandler, IDragHandler, I
 		thumb.gameObject.SetActive(false);
 	}
 }
+// END 3d_virtualjoystick

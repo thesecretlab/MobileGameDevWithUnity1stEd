@@ -1,3 +1,4 @@
+// BEGIN 2d_rope
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
@@ -198,3 +199,4 @@ public class Rope : MonoBehaviour {
 	}
 
 }
+// END 2d_rope

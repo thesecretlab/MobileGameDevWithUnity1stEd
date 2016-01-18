@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+// BEGIN 2d_gnome
 public class Gnome : MonoBehaviour {
 
 	// The object that the camera should follow.
@@ -131,12 +132,12 @@ public class Gnome : MonoBehaviour {
 		remove.delay = delayBeforeRemoving;
 		
 
-		StartCoroutine("ReleaseGhost");
+		StartCoroutine(ReleaseGhost());
 	}
 
 	IEnumerator ReleaseGhost() {
 
-		// No ghost? Bail.
+		// No ghost prefab? Bail out.
 		if (ghostPrefab == null) {
 			return false;
 		}
@@ -150,3 +151,4 @@ public class Gnome : MonoBehaviour {
 
 
 }
+// END 2d_gnome

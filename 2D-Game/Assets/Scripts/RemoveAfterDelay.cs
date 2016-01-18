@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+// BEGIN 2d_removeafterdelay
 // Removes an object after a certain delay.
 public class RemoveAfterDelay : MonoBehaviour {
 
@@ -22,3 +23,4 @@ public class RemoveAfterDelay : MonoBehaviour {
 		// script.
 	}
 }
+// END 2d_removeafterdelay

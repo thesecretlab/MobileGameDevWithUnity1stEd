@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+// BEGIN 3d_gamemanager
 public class GameManager : Singleton<GameManager> {
 
 	public GameObject shipPrefab;
@@ -25,7 +26,9 @@ public class GameManager : Singleton<GameManager> {
 	public GameObject gameOverUI;
 	public GameObject mainMenuUI;
 
+	// BEGIN 3d_gamemanager_boundary
 	public GameObject warningUI;
+	// END 3d_gamemanager_boundary
 
 	
 	public AsteroidSpawner asteroidSpawner;
@@ -68,10 +71,12 @@ public class GameManager : Singleton<GameManager> {
 	void Start() {
 		ShowMainMenu();
 
+		// BEGIN 3d_gamemanager_boundary
 		// Ensure the warning UI is gone
 		if (warningUI != null) {
 			warningUI.SetActive(false);
 		}
+		// END 3d_gamemanager_boundary
 	}
 
 	public void ShowMainMenu() {
@@ -125,8 +130,10 @@ public class GameManager : Singleton<GameManager> {
 		if (_currentSpaceStation != null)
 			Destroy (_currentSpaceStation);
 
+		// BEGIN 3d_gamemanager_boundary
 		if (warningUI != null)
 			warningUI.SetActive(false);
+		// END 3d_gamemanager_boundary
 
 		asteroidSpawner.spawnAsteroids = false;
 		asteroidSpawner.DestroyAllAsteroids();
@@ -145,6 +152,7 @@ public class GameManager : Singleton<GameManager> {
 		}
 	}
 
+	// BEGIN 3d_gamemanager_boundary
 	public Boundary boundary;
 
 	public void Update() {
@@ -175,5 +183,7 @@ public class GameManager : Singleton<GameManager> {
 
 
 	}
+	// END 3d_gamemanager_boundary
 
 }
+// END 3d_gamemanager

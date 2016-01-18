@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+// BEGIN 3d_shot
 // Moves forward at a certain speed, and dies after a certain time.
 public class Shot : MonoBehaviour {
 
@@ -17,3 +18,4 @@ public class Shot : MonoBehaviour {
 		transform.Translate(Vector3.forward * speed  * Time.deltaTime);
 	}
 }
+// END 3d_shot

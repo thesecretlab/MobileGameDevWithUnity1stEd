@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿// BEGIN 2d_mainmenu
+using UnityEngine;
 using System.Collections;
 
 // Manages the main menu.
@@ -16,6 +17,7 @@ public class MainMenu : MonoBehaviour {
 
 	// (If you have Unity Pro, and want to see what the non-Pro code does,
 	// change UNITY_PRO_LICENSE to !UNITY_PRO_LICENSE.)
+	// TODO: Check to see if this is necessary in the latest Unity.
 #if UNITY_PRO_LICENSE
 
 	// Represents the scene background loading.
@@ -71,3 +73,4 @@ public class MainMenu : MonoBehaviour {
 
 
 }
+// END 2d_mainmenu

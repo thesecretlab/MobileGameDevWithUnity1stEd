@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+// BEGIN 3d_asteroidspawner
 public class AsteroidSpawner : MonoBehaviour {
 
 	public float radius = 100.0f;
@@ -62,3 +63,4 @@ public class AsteroidSpawner : MonoBehaviour {
 		}
 	}	
 }
+// END 3d_asteroidspawner

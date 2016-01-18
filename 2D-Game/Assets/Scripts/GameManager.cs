@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+// BEGIN 2d_gamemanager
 // Manages the game state.
 public class GameManager : Singleton<GameManager> {
 
@@ -237,3 +238,4 @@ public class GameManager : Singleton<GameManager> {
 	}
 
 }
+// END 2d_gamemanager

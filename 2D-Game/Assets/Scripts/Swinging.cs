@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿// BEGIN 2d_swinging
+
+using UnityEngine;
 using System.Collections;
 
 // Uses the input manager to apply sideways forces to an object.
@@ -29,3 +31,4 @@ public class Swinging : MonoBehaviour {
 	}
 
 }
+// END 2d_swinging

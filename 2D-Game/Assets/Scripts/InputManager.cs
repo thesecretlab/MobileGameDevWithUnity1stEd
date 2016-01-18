@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿// BEGIN 2d_inputmanager
+
+using UnityEngine;
 using System.Collections;
 
 // Translates the accelerometer data into sideways motion info.
@@ -13,6 +15,7 @@ public class InputManager : Singleton<InputManager> {
 			return _sidewaysMotion;
 		}
 	}
+	
 	// Every frame, store the tilt
 	void Update () {
 		Vector3 accel = Input.acceleration;
@@ -21,3 +24,4 @@ public class InputManager : Singleton<InputManager> {
 
 	}
 }
+// END 2d_inputmanager

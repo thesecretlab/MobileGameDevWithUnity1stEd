@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 
+// BEGIN 3d_smoothfollow
 public class SmoothFollow : MonoBehaviour
 {
 
@@ -60,3 +61,4 @@ public class SmoothFollow : MonoBehaviour
 
 	}
 }
+// END 3d_smoothfollow

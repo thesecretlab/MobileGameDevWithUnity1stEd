@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+// BEGIN 2d_camerafollow
 // Adjusts the camera to always match the Y-position of a target object,
 // within certain limits.
 public class CameraFollow : MonoBehaviour {
@@ -51,3 +52,4 @@ public class CameraFollow : MonoBehaviour {
 		Gizmos.DrawLine(topPoint, bottomPoint);
 	}
 }
+// END 2d_camerafollow

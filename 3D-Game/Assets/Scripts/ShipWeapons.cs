@@ -1,10 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+// BEGIN 3d_shipweapons
 public class ShipWeapons : MonoBehaviour {
 
 	public GameObject shotPrefab;
 
+	// BEGIN 3d_shipweapons_inputmanager
 	public void Awake() {
 		InputManager.instance.SetWeapons(this);
 	}
@@ -12,6 +14,7 @@ public class ShipWeapons : MonoBehaviour {
 	public void OnDestroy() {
 		InputManager.instance.RemoveWeapons(this);
 	}
+	// END 3d_shipweapons_inputmanager
 
 	public Transform[] firePoints;
 
@@ -37,3 +40,4 @@ public class ShipWeapons : MonoBehaviour {
 	}
 
 }
+// END 3d_shipweapons

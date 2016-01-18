@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+// BEGIN 2d_spriteswapper
 // Swaps out a sprite for another. For example, the treasure
 // switches from 'treasure present' to 'treasure not present'.
 public class SpriteSwapper : MonoBehaviour {
@@ -39,3 +40,4 @@ public class SpriteSwapper : MonoBehaviour {
 		}
 	}
 }
+// END 2d_spriteswapper
