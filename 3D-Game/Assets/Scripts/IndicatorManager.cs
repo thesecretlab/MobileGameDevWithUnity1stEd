@@ -1,7 +1,5 @@
 ﻿using UnityEngine;
 using System.Collections;
-
-// BEGIN 3d_indicatormanager
 using UnityEngine.UI;
 
 public class IndicatorManager : Singleton<IndicatorManager> {
@@ -27,4 +25,3 @@ public class IndicatorManager : Singleton<IndicatorManager> {
 	}
 	
 }
-// END 3d_indicatormanager

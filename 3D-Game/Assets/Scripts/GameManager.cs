@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-// BEGIN 3d_gamemanager
 public class GameManager : Singleton<GameManager> {
 
 	public GameObject shipPrefab;
@@ -18,23 +17,15 @@ public class GameManager : Singleton<GameManager> {
 		get { return _currentSpaceStation; }
 	}
 
+	public Boundary boundary;
 
 	public SmoothFollow cameraFollow;
+	public Timer timer;
 
-	public GameObject inGameUI;
-	public GameObject pausedUI;
-	public GameObject gameOverUI;
-	public GameObject mainMenuUI;
-
-	// BEGIN 3d_gamemanager_boundary
 	public GameObject warningUI;
-	// END 3d_gamemanager_boundary
-
-	
-	public AsteroidSpawner asteroidSpawner;
-
 
 	private bool _gameIsPlaying = false;
+
 	public bool gameIsPlaying {
 		get {
 			return _gameIsPlaying;
@@ -42,22 +33,21 @@ public class GameManager : Singleton<GameManager> {
 	}
 
 	void ShowUI(GameObject newUI) {
-		GameObject[] allUI = {
-			inGameUI, 
-			pausedUI, 
-			gameOverUI, 
-			mainMenuUI
-		};
+		GameObject[] allUI = {inGameUI, pausedUI, gameOverUI, mainMenuUI};
 
-		// Hide ALL interfaces
-		foreach (GameObject interfaceToHide in allUI) {
-			interfaceToHide.SetActive(false);
+		foreach (GameObject UIToHide in allUI) {
+			UIToHide.SetActive(false);
 		}
 
-		// Now show the one we want
 		newUI.SetActive(true);
 	}
 
+	public GameObject inGameUI;
+	public GameObject pausedUI;
+	public GameObject gameOverUI;
+	public GameObject mainMenuUI;
+
+	public AsteroidSpawner asteroidSpawner;
 
 	private bool _paused;
 	public bool paused {
@@ -70,17 +60,10 @@ public class GameManager : Singleton<GameManager> {
 
 	void Start() {
 		ShowMainMenu();
-
-		// BEGIN 3d_gamemanager_boundary
-		// Ensure the warning UI is gone
-		if (warningUI != null) {
-			warningUI.SetActive(false);
-		}
-		// END 3d_gamemanager_boundary
 	}
 
 	public void ShowMainMenu() {
-
+		// TODO: end game
 		ShowUI(mainMenuUI);
 
 		_gameIsPlaying = false;
@@ -115,6 +98,7 @@ public class GameManager : Singleton<GameManager> {
 		asteroidSpawner.spawnAsteroids = true;
 		asteroidSpawner.target = _currentSpaceStation.transform;
 
+		timer.StartClock();
 	}
 
 
@@ -130,14 +114,12 @@ public class GameManager : Singleton<GameManager> {
 		if (_currentSpaceStation != null)
 			Destroy (_currentSpaceStation);
 
-		// BEGIN 3d_gamemanager_boundary
-		if (warningUI != null)
-			warningUI.SetActive(false);
-		// END 3d_gamemanager_boundary
+		warningUI.SetActive(false);
 
 		asteroidSpawner.spawnAsteroids = false;
 		asteroidSpawner.DestroyAllAsteroids();
 
+		// TODO: shut down all spawners
 	}
 
 	public void SetPaused(bool paused) {
@@ -152,15 +134,9 @@ public class GameManager : Singleton<GameManager> {
 		}
 	}
 
-	// BEGIN 3d_gamemanager_boundary
-	public Boundary boundary;
-
 	public void Update() {
 
 		if (_currentShip == null)
-			return;
-
-		if (boundary == null || warningUI == null)
 			return;
 
 		// If the ship is outside the Boundary's Destroy Radius,
@@ -183,7 +159,8 @@ public class GameManager : Singleton<GameManager> {
 
 
 	}
-	// END 3d_gamemanager_boundary
+
+
+
 
 }
-// END 3d_gamemanager

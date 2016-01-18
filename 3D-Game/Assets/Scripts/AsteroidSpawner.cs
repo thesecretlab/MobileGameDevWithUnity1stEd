@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-// BEGIN 3d_asteroidspawner
 public class AsteroidSpawner : MonoBehaviour {
 
 	public float radius = 100.0f;
@@ -15,6 +14,7 @@ public class AsteroidSpawner : MonoBehaviour {
 
 	public bool spawnAsteroids = false;
 
+	// Use this for initialization
 	void Start () {
 		StartCoroutine(CreateAsteroids());
 	}
@@ -61,6 +61,10 @@ public class AsteroidSpawner : MonoBehaviour {
 		foreach (Asteroid a in FindObjectsOfType<Asteroid>()) {
 			Destroy (a.gameObject);
 		}
-	}	
+	}
+	
+	// Update is called once per frame
+	void Update () {
+	
+	}
 }
-// END 3d_asteroidspawner

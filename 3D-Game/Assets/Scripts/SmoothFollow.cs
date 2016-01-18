@@ -1,24 +1,19 @@
 ﻿using UnityEngine;
 
-// BEGIN 3d_smoothfollow
 public class SmoothFollow : MonoBehaviour
 {
 
 	// The target we are following
 	public Transform target;
 	// The distance in the x-z plane to the target
-	public float distance = 7.0f;
+	public float distance = 10.0f;
 	// the height we want the camera to be above the target
-	public float height = 2.5f;
+	public float height = 5.0f;
 
-	// How quickly we change rotation
-	public float rotationDamping = 2;
+	public float rotationDamping;
+	public float heightDamping;
 
-	// How quickly we change height
-	public float heightDamping = 5;
-
-	// Whether we should be facing the same direction as the target
-	public bool matchOrientation = true;
+	public bool matchOrientation = false;
 
 	// Update is called once per frame
 	void LateUpdate()
@@ -61,4 +56,3 @@ public class SmoothFollow : MonoBehaviour
 
 	}
 }
-// END 3d_smoothfollow

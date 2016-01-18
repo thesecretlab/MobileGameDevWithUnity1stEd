@@ -1,13 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
-
-// BEGIN 3d_virtualjoystick
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class VirtualJoystick : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler {
 
-	public RectTransform thumb;
+	public RectTransform pad;
 
 	private Vector2 originalPosition;
 	private Vector2 originalPadPosition;
@@ -19,9 +17,9 @@ public class VirtualJoystick : MonoBehaviour, IBeginDragHandler, IDragHandler, I
 	// Use this for initialization
 	void Start () {
 		originalPosition = this.GetComponent<RectTransform>().localPosition;
-		originalPadPosition = thumb.localPosition;
+		originalPadPosition = pad.localPosition;
 
-		thumb.gameObject.SetActive(false);
+		pad.gameObject.SetActive(false);
 
 		delta = Vector2.zero;
 	}
@@ -33,7 +31,7 @@ public class VirtualJoystick : MonoBehaviour, IBeginDragHandler, IDragHandler, I
 
 	public void OnBeginDrag (PointerEventData eventData) {
 
-		thumb.gameObject.SetActive(true);
+		pad.gameObject.SetActive(true);
 
 		Vector3 worldPoint = new Vector3();
 		RectTransformUtility.ScreenPointToWorldPointInRectangle(this.transform as RectTransform, 
@@ -44,7 +42,7 @@ public class VirtualJoystick : MonoBehaviour, IBeginDragHandler, IDragHandler, I
 
 
 		this.GetComponent<RectTransform>().position = worldPoint;
-		thumb.localPosition = originalPadPosition;
+		pad.localPosition = originalPadPosition;
 	}
 
 	public void OnDrag (PointerEventData eventData) {
@@ -54,11 +52,11 @@ public class VirtualJoystick : MonoBehaviour, IBeginDragHandler, IDragHandler, I
 		                                                        eventData.enterEventCamera, 
 		                                                        out worldPoint);
 
-		thumb.position = worldPoint;
+		pad.position = worldPoint;
 
 		var size = GetComponent<RectTransform>().rect.size;
 
-		delta = thumb.localPosition;
+		delta = pad.localPosition;
 
 		delta.x /= size.x / 2.0f;
 		delta.y /= size.y / 2.0f;
@@ -74,7 +72,6 @@ public class VirtualJoystick : MonoBehaviour, IBeginDragHandler, IDragHandler, I
 
 		delta = Vector2.zero;
 
-		thumb.gameObject.SetActive(false);
+		pad.gameObject.SetActive(false);
 	}
 }
-// END 3d_virtualjoystick
