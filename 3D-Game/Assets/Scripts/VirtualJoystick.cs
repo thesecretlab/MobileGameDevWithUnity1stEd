@@ -75,3 +75,4 @@ public class VirtualJoystick : MonoBehaviour, IBeginDragHandler, IDragHandler, I
 		pad.gameObject.SetActive(false);
 	}
 }
+// END 3d_virtualjoystick

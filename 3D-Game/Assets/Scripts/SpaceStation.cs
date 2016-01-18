@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+// BEGIN 3d_spacestation
 public class SpaceStation : MonoBehaviour {
 
 	void Start () {
@@ -8,3 +9,4 @@ public class SpaceStation : MonoBehaviour {
 	}
 
 }
+// END 3d_spacestation

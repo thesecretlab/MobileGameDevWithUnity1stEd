@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+// BEGIN 3d_gamemanager
 public class GameManager : Singleton<GameManager> {
 
 	public GameObject shipPrefab;
@@ -22,7 +23,9 @@ public class GameManager : Singleton<GameManager> {
 	public SmoothFollow cameraFollow;
 	public Timer timer;
 
+	// BEGIN 3d_gamemanager_boundary
 	public GameObject warningUI;
+	// END 3d_gamemanager_boundary
 
 	private bool _gameIsPlaying = false;
 
@@ -159,8 +162,7 @@ public class GameManager : Singleton<GameManager> {
 
 
 	}
-
-
-
+	// END 3d_gamemanager_boundary
 
 }
+// END 3d_gamemanager

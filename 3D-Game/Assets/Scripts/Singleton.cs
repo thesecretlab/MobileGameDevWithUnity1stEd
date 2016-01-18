@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+// BEGIN 3d_singleton
 // This class allows other objects to refer to a single shared object.
 // The GameManager and InputManager classes use this.
 
@@ -38,3 +39,4 @@ public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
 	}
 
 }
+// END 3d_singleton

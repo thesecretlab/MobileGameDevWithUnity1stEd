@@ -1,18 +1,15 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+// BEGIN 3d_shipthrust
 public class ShipThrust : MonoBehaviour {
 
 	public float speed = 5.0f;
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
+	// Move the ship forward at a constant speed
 	void Update () {
 		var offset = Vector3.forward * Time.deltaTime * speed;
 		this.transform.Translate(offset);
 	}
 }
+// END 3d_shipthrust
