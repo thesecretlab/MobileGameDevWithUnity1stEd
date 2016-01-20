@@ -1,6 +1,8 @@
-﻿// BEGIN 2d_mainmenu
-using UnityEngine;
+﻿using UnityEngine;
 using System.Collections;
+
+// BEGIN 2d_mainmenu
+using UnityEngine.SceneManagement;
 
 // Manages the main menu.
 public class MainMenu : MonoBehaviour {
@@ -10,15 +12,6 @@ public class MainMenu : MonoBehaviour {
 
 	// The UI component that contains the "Loading..." text.
 	public RectTransform loadingOverlay;
-
-	// If we have a Unity Pro license, we can load scenes in the background.
-	// All of the code from the following line to the '#else' line below will only
-	// be used if you have Unity Pro.
-
-	// (If you have Unity Pro, and want to see what the non-Pro code does,
-	// change UNITY_PRO_LICENSE to !UNITY_PRO_LICENSE.)
-	// TODO: Check to see if this is necessary in the latest Unity.
-#if UNITY_PRO_LICENSE
 
 	// Represents the scene background loading.
 	// This is used to control when the scene should switch over.
@@ -31,7 +24,7 @@ public class MainMenu : MonoBehaviour {
 		loadingOverlay.gameObject.SetActive(false);
 
 		// Begin loading in the scene in the background...
-		sceneLoadingOperation = Application.LoadLevelAsync(sceneToLoad);
+		sceneLoadingOperation = SceneManager.LoadSceneAsync(sceneToLoad);
 
 		// ...but don't actually switch to the new scene until we're ready.
 		sceneLoadingOperation.allowSceneActivation = false;
@@ -50,26 +43,6 @@ public class MainMenu : MonoBehaviour {
 		sceneLoadingOperation.allowSceneActivation = true;
 
 	}
-#else 
-	// If we don't have a Unity Pro license, this version of the code will
-	// be used.
-
-	public void Start() {
-		// Ensure the 'loading' overlay is invisible
-		loadingOverlay.gameObject.SetActive(false);
-	}
-
-	// Called when the New Game button is tapped.
-	public void LoadScene() {
-
-		// Make the 'Loading' overlay visible.
-		loadingOverlay.gameObject.SetActive(true);
-
-		// Tell Unity to begin loading the scene.
-		// The new scene will automatically appear when loading is complete.
-		Application.LoadLevel(sceneToLoad);		
-	}
-#endif
 
 
 }

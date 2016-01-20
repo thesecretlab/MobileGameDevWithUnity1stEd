@@ -139,8 +139,8 @@ public class Gnome : MonoBehaviour {
 
 		// No ghost prefab? Bail out.
 		if (ghostPrefab == null) {
-			return false;
-		}
+			yield break;
+		} 
 
 		// Wait for delayBeforeReleasingGhost seconds
 		yield return new WaitForSeconds(delayBeforeReleasingGhost);
