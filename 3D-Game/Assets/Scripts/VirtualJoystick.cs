@@ -2,63 +2,80 @@
 using System.Collections;
 
 // BEGIN 3d_virtualjoystick
+// Get access to the Event interfaces
 using UnityEngine.EventSystems;
+
+// Get access to UI elements
 using UnityEngine.UI;
 
-public class VirtualJoystick : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler {
+public class VirtualJoystick : MonoBehaviour, IBeginDragHandler, 
+	IDragHandler, IEndDragHandler {	
 
-	public RectTransform pad;
+	// The sprite that gets dragged around
+	public RectTransform thumb;
 
+	// The locations of the thumb and joystick when no dragging is happening
 	private Vector2 originalPosition;
-	private Vector2 originalPadPosition;
+	private Vector2 originalThumbPosition;
 
-	private Vector2 startScreenPoint;
-
+	// The distance that the thumb has been dragged away from its
+	// original position
 	public Vector2 delta;
 
-	// Use this for initialization
 	void Start () {
+		// When the joystick starts up, record the original positions
 		originalPosition = this.GetComponent<RectTransform>().localPosition;
-		originalPadPosition = pad.localPosition;
+		originalThumbPosition = thumb.localPosition;
 
-		pad.gameObject.SetActive(false);
+		// Disable the thumb so that it's not visible
+		thumb.gameObject.SetActive(false);
 
+		// Reset the delta to zero
 		delta = Vector2.zero;
 	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
 
+	// Called when dragging starts
 	public void OnBeginDrag (PointerEventData eventData) {
 
-		pad.gameObject.SetActive(true);
+		// Make the thumb visible
+		thumb.gameObject.SetActive(true);
 
+		// Figure out where in world-space the drag started
 		Vector3 worldPoint = new Vector3();
-		RectTransformUtility.ScreenPointToWorldPointInRectangle(this.transform as RectTransform, 
-		                                                        eventData.position, 
-		                                                        eventData.enterEventCamera, 
-		                                                        out worldPoint);
+		RectTransformUtility.ScreenPointToWorldPointInRectangle(
+			this.transform as RectTransform, 
+            eventData.position, 
+            eventData.enterEventCamera, 
+            out worldPoint);
 
 
-
+		// Place the joystick at that point
 		this.GetComponent<RectTransform>().position = worldPoint;
-		pad.localPosition = originalPadPosition;
+
+		// Ensure that the thumb is in its original location,
+		// relative to the joystick
+		thumb.localPosition = originalThumbPosition;
 	}
 
+	// Called when the drag moves
 	public void OnDrag (PointerEventData eventData) {
+
+		// Work out where the drag is in world space now
 		Vector3 worldPoint = new Vector3();
-		RectTransformUtility.ScreenPointToWorldPointInRectangle(this.transform as RectTransform, 
-		                                                        eventData.position, 
-		                                                        eventData.enterEventCamera, 
-		                                                        out worldPoint);
+		RectTransformUtility.ScreenPointToWorldPointInRectangle(
+			this.transform as RectTransform, 
+            eventData.position, 
+            eventData.enterEventCamera, 
+            out worldPoint);
 
-		pad.position = worldPoint;
+		// Place the thumb at that point
+		thumb.position = worldPoint;
 
+
+		// Calculate distance from original position
 		var size = GetComponent<RectTransform>().rect.size;
 
-		delta = pad.localPosition;
+		delta = thumb.localPosition;
 
 		delta.x /= size.x / 2.0f;
 		delta.y /= size.y / 2.0f;
@@ -69,12 +86,16 @@ public class VirtualJoystick : MonoBehaviour, IBeginDragHandler, IDragHandler, I
 
 	}
 
+	// Called when dragging ends
 	public void OnEndDrag (PointerEventData eventData) {
+		// Reset the position of the joystick
 		this.GetComponent<RectTransform>().localPosition = originalPosition;
 
+		// Reset the distance to zero
 		delta = Vector2.zero;
 
-		pad.gameObject.SetActive(false);
+		// Hide the thumb
+		thumb.gameObject.SetActive(false);
 	}
 }
 // END 3d_virtualjoystick

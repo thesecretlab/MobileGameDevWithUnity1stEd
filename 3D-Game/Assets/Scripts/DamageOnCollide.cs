@@ -23,11 +23,13 @@ public class DamageOnCollide : MonoBehaviour {
 			ourDamage.TakeDamage(damageToSelf);
 		}
 	}
-	
+
+	// Did an object enter this trigger area?
 	void OnTriggerEnter(Collider collider) {
 		HitObject(collider.gameObject);
 	}
-	
+
+	// Did an object collide with us?
 	void OnCollisionEnter(Collision collision) {		
 		HitObject(collision.gameObject);
 	}

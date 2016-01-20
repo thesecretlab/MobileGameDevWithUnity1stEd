@@ -4,106 +4,118 @@ using System.Collections;
 // BEGIN 3d_gamemanager
 public class GameManager : Singleton<GameManager> {
 
+	// The prefab to use for the ship, the place it starts from, 
+	// and the current ship object
 	public GameObject shipPrefab;
 	public Transform shipStartPosition;
-	private GameObject _currentShip;
-	public GameObject currentShip {
-		get { return _currentShip; }
-	}
+	public GameObject currentShip {get; private set;}
 
+	// The prefab to use for the space station, the place it starts from, 
+	// and the current ship object
 	public GameObject spaceStationPrefab;
 	public Transform spaceStationStartPosition;
-	private GameObject _currentSpaceStation;
-	public GameObject currentSpaceStation {
-		get { return _currentSpaceStation; }
-	}
+	public GameObject currentSpaceStation {get; private set;}
 
-
+	// The follow script on the main camera
 	public SmoothFollow cameraFollow;
 
-	// BEGIN 3d_gamemanager_boundary_timer
+	// BEGIN 3d_gamemanager_timer
+	// The game timer
 	public Timer timer;
-	// END 3d_gamemanager_boundary_timer
+	// END 3d_gamemanager_timer
 
 	// BEGIN 3d_gamemanager_boundary
+	// The game's boundary
 	public Boundary boundary;
-
-	public GameObject warningUI;
 	// END 3d_gamemanager_boundary
 
-	private bool _gameIsPlaying = false;
-
-	public bool gameIsPlaying {
-		get {
-			return _gameIsPlaying;
-		}
-	}
-
-	void ShowUI(GameObject newUI) {
-		GameObject[] allUI = {inGameUI, pausedUI, gameOverUI, mainMenuUI};
-
-		foreach (GameObject UIToHide in allUI) {
-			UIToHide.SetActive(false);
-		}
-
-		newUI.SetActive(true);
-	}
-
+	// The containers for the various bits of UI
 	public GameObject inGameUI;
 	public GameObject pausedUI;
 	public GameObject gameOverUI;
 	public GameObject mainMenuUI;
 
-	public AsteroidSpawner asteroidSpawner;
+	// BEGIN 3d_gamemanager_boundary
+	// The warning UI that appears when we approach
+	// the boundary
+	public GameObject warningUI;
+	// END 3d_gamemanager_boundary
 
-	private bool _paused;
-	public bool paused {
-		set {
-			_paused = value;
+	// Is the game currently playing?
+	public bool gameIsPlaying {get; private set;}
 
-			asteroidSpawner.spawnAsteroids = !_paused;
+	// Shows a UI container, and hides all others.
+	void ShowUI(GameObject newUI) {
+
+		// Create a list of all UI containers.
+		GameObject[] allUI = {inGameUI, pausedUI, gameOverUI, mainMenuUI};
+
+		// Hide them all.
+		foreach (GameObject UIToHide in allUI) {
+			UIToHide.SetActive(false);
 		}
+
+		// And then show the provided UI container.
+		newUI.SetActive(true);
 	}
 
+	// The game's Asteroid Spawner
+	public AsteroidSpawner asteroidSpawner;
+
+	// Keeps track of whether the game is paused or not.
+	public bool paused;
+
+	// Show the main menu when the game starts
 	void Start() {
 		ShowMainMenu();
 	}
 
 	public void ShowMainMenu() {
-		// TODO: end game
 		ShowUI(mainMenuUI);
 
-		_gameIsPlaying = false;
+		// We aren't playing yet when the game starts
+		gameIsPlaying = false;
 
+		// Don't spawn asteroids either
 		asteroidSpawner.spawnAsteroids = false;
 	}
 
-
+	// Called by the New Game button being tapped
 	public void StartGame() {
+		// Show the in-game UI
 		ShowUI(inGameUI);
 
-		_gameIsPlaying = true;
+		// We're now playing
+		gameIsPlaying = true;
 
-		if (_currentShip != null) {
-			Destroy(_currentShip);
+		// If we happen to have a ship, destroy it
+		if (currentShip != null) {
+			Destroy(currentShip);
 		}
 
-		if (_currentSpaceStation != null) {
-			Destroy(_currentSpaceStation);
+		// Likewise for the station
+		if (currentSpaceStation != null) {
+			Destroy(currentSpaceStation);
 		}
 
-		_currentShip = Instantiate(shipPrefab);
-		_currentShip.transform.position = shipStartPosition.position;
-		_currentShip.transform.rotation = shipStartPosition.rotation;
+		// Create a new ship, and place it at the start position
+		currentShip = Instantiate(shipPrefab);
+		currentShip.transform.position = shipStartPosition.position;
+		currentShip.transform.rotation = shipStartPosition.rotation;
 
-		_currentSpaceStation = Instantiate(spaceStationPrefab);
-		_currentSpaceStation.transform.position = spaceStationStartPosition.position;
-		_currentSpaceStation.transform.rotation = spaceStationStartPosition.rotation;
+		// And likewise for the station
+		currentSpaceStation = Instantiate(spaceStationPrefab);
+		currentSpaceStation.transform.position = spaceStationStartPosition.position;
+		currentSpaceStation.transform.rotation = spaceStationStartPosition.rotation;
 
-		cameraFollow.target = _currentShip.transform;
+		// Make the follow script track the new ship
+		cameraFollow.target = currentShip.transform;
 
+		// Start spawning asteroids
 		asteroidSpawner.spawnAsteroids = true;
-		asteroidSpawner.target = _currentSpaceStation.transform;
+
+		// And aim the the spawner at the new space station
+		asteroidSpawner.target = currentSpaceStation.transform;
 
 		// BEGIN 3d_gamemanager_timer
 		timer.StartClock();
@@ -111,34 +123,46 @@ public class GameManager : Singleton<GameManager> {
 	}
 
 
-
+	// Called by objects that end the game when they're destroyed
 	public void GameOver() {
+		// Show the game over UI
 		ShowUI(gameOverUI);
 
-		_gameIsPlaying = false;
+		// We're no longer playing
+		gameIsPlaying = false;
 
-		if (_currentShip != null)
-			Destroy (_currentShip);
+		// Destroy the ship and the station
+		if (currentShip != null)
+			Destroy (currentShip);
 
-		if (_currentSpaceStation != null)
-			Destroy (_currentSpaceStation);
+		if (currentSpaceStation != null)
+			Destroy (currentSpaceStation);
 
 		// BEGIN 3d_gamemanager_boundary
+		// Stop showing the warning UI, if it was visible
 		warningUI.SetActive(false);
 		// END 3d_gamemanager_boundary
 
+		// Stop spawning asteroids
 		asteroidSpawner.spawnAsteroids = false;
+
+		// And remove all lingering asteroids from the game
 		asteroidSpawner.DestroyAllAsteroids();
 	}
 
+	// Called when the Pause or Resume buttons are tapped
 	public void SetPaused(bool paused) {
 
+		// Switch between the in-game and paused UI
 		inGameUI.SetActive(!paused);
 		pausedUI.SetActive(paused);
 
+		// If we're paused..
 		if (paused) {
+			// Stop time
 			Time.timeScale = 0.0f;
 		} else {
+			// Resume time
 			Time.timeScale = 1.0f;
 		}
 	}
@@ -146,7 +170,8 @@ public class GameManager : Singleton<GameManager> {
 	// BEGIN 3d_gamemanager_boundary
 	public void Update() {
 
-		if (_currentShip == null)
+		// If we don't have a ship, bail out
+		if (currentShip == null)
 			return;
 
 		// If the ship is outside the Boundary's Destroy Radius,
@@ -155,7 +180,7 @@ public class GameManager : Singleton<GameManager> {
 		// don't show the Warning UI.
 
 		float distance = 
-			(_currentShip.transform.position 
+			(currentShip.transform.position 
 				- boundary.transform.position).magnitude;
 
 		if (distance > boundary.destroyRadius) {

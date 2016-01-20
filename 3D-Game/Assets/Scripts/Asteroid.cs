@@ -4,13 +4,19 @@ using System.Collections;
 // BEGIN 3d_asteroid
 public class Asteroid : MonoBehaviour {
 
-	public float speed = 1.0f;
+	// The speed at which the asteroid moves.
+	public float speed = 10.0f;
 
 	void Start () {
+		// Set the velocity of the rigidbody
 		GetComponent<Rigidbody>().velocity = transform.forward * speed;
 
-		var indicator = IndicatorManager.instance.AddLabel(gameObject, Color.red);
+		// Create a red indicator for this asteroid
+		var indicator = IndicatorManager.instance.AddIndicator(gameObject, Color.red);
+
 		// BEGIN 3d_asteroid_gamemanager
+		// Track the distance from this object to the current space station
+		// that's managed by the GameManager
         indicator.showDistanceTo = GameManager.instance.currentSpaceStation.transform;
 		// END 3d_asteroid_gamemanager
 	}
