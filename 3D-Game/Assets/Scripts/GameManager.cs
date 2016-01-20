@@ -18,12 +18,16 @@ public class GameManager : Singleton<GameManager> {
 		get { return _currentSpaceStation; }
 	}
 
-	public Boundary boundary;
 
 	public SmoothFollow cameraFollow;
+
+	// BEGIN 3d_gamemanager_boundary_timer
 	public Timer timer;
+	// END 3d_gamemanager_boundary_timer
 
 	// BEGIN 3d_gamemanager_boundary
+	public Boundary boundary;
+
 	public GameObject warningUI;
 	// END 3d_gamemanager_boundary
 
@@ -101,7 +105,9 @@ public class GameManager : Singleton<GameManager> {
 		asteroidSpawner.spawnAsteroids = true;
 		asteroidSpawner.target = _currentSpaceStation.transform;
 
+		// BEGIN 3d_gamemanager_timer
 		timer.StartClock();
+		// END 3d_gamemanager_timer
 	}
 
 
@@ -117,12 +123,12 @@ public class GameManager : Singleton<GameManager> {
 		if (_currentSpaceStation != null)
 			Destroy (_currentSpaceStation);
 
+		// BEGIN 3d_gamemanager_boundary
 		warningUI.SetActive(false);
+		// END 3d_gamemanager_boundary
 
 		asteroidSpawner.spawnAsteroids = false;
 		asteroidSpawner.DestroyAllAsteroids();
-
-		// TODO: shut down all spawners
 	}
 
 	public void SetPaused(bool paused) {
@@ -137,6 +143,7 @@ public class GameManager : Singleton<GameManager> {
 		}
 	}
 
+	// BEGIN 3d_gamemanager_boundary
 	public void Update() {
 
 		if (_currentShip == null)
@@ -147,16 +154,19 @@ public class GameManager : Singleton<GameManager> {
 		// the Warning radius, show the Warning UI. If it's within both,
 		// don't show the Warning UI.
 
-		float distance = Vector3.Magnitude(_currentShip.transform.position -
-		                                   boundary.transform.position);
+		float distance = 
+			(_currentShip.transform.position 
+				- boundary.transform.position).magnitude;
 
 		if (distance > boundary.destroyRadius) {
+			// The ship has gone beyond the destroy radius, so it's game over
 			GameOver();
 		} else if (distance > boundary.warningRadius) {
-			// Enable the Warning UI
+			// The ship has gone beyond the warning radius, so show the 
+			// warning UI
 			warningUI.SetActive(true);
 		} else {
-			// It's not past the warning threshold, so don't show the warning ui
+			// It's within the warning threshold, so don't show the warning UI
 			warningUI.SetActive(false);
 		}
 

@@ -32,11 +32,13 @@ public class ShipWeapons : MonoBehaviour {
 		shot.transform.position = firePointToUse.position;
 		shot.transform.rotation = firePointToUse.rotation;
 
+		// BEGIN 3d_shipweapons_audio
 		// Sound
 		var audio = firePointToUse.GetComponent<AudioSource>();
 		if (audio) {
 			audio.Play();
 		}
+		// END 3d_shipweapons_audio
 
 		firePointIndex++;
 

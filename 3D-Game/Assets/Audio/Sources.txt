@@ -1,0 +1,9 @@
+All sounds in this project are from the marvellous FreeSound.org. They're
+public domain, so you can do what you like with them; as a thank-you to the
+people who made them and generously donated them to the public domain, we've
+included links to where we found them.
+
+
+Explosion: "Cannon4" by Isaac200000. http://www.freesound.org/people/Isaac200000/sounds/184647/
+Laser: "a shot" by halgrimm. http://www.freesound.org/people/Halgrimm/sounds/156895/
+Engine: "Rocket Boost Engine Loop" by qubodup. http://www.freesound.org/people/qubodup/sounds/146770/

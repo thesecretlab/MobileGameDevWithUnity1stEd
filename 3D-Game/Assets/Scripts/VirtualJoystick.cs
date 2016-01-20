@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
+
+// BEGIN 3d_virtualjoystick
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
