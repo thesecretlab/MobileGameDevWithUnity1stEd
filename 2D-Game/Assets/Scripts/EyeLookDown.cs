@@ -10,7 +10,8 @@ public class EyeLookDown : MonoBehaviour {
 
 	void LateUpdate() {
 		// The rotation is done in LateUpdate in order to make sure
-		// that any updating of position due to physics, etc, has finished.
+		// that any updating of position due to physics, etc, has 
+        // finished.
 
 		transform.rotation = Quaternion.Euler(0, 0, rotation);
 	}

@@ -59,13 +59,19 @@ public class Gnome : MonoBehaviour {
 			
 		case DamageType.Burning:
 			if (flameDeathPrefab != null) {
-				Instantiate(flameDeathPrefab, cameraFollowTarget.position, cameraFollowTarget.rotation);
+				Instantiate(
+                    flameDeathPrefab,cameraFollowTarget.position, 
+                    cameraFollowTarget.rotation);
 			}
 			break;
 			
 		case DamageType.Slicing:
 			if (deathPrefab != null) {
-				Instantiate(deathPrefab, cameraFollowTarget.position, cameraFollowTarget.rotation);
+				Instantiate(
+                    deathPrefab, 
+                    cameraFollowTarget.position, 
+                    cameraFollowTarget.rotation
+                );
 			}
 			break;
 		}
@@ -102,26 +108,36 @@ public class Gnome : MonoBehaviour {
 
 			if (shouldDetach) {
 
-				// Make this object remove its rigidbody and collider after it comes to rest
+				// Make this object remove its rigidbody and 
+                // collider after it comes to rest
 				part.Detach ();
 
-				// If we're separating, and the damage type was Slicing,
-				// add a blood fountain
+				// If we're separating, and the damage type was 
+                // Slicing, add a blood fountain
 
 				if (type == DamageType.Slicing) {
 
-					if (part.bloodFountainOrigin != null && bloodFountainPrefab != null) {
-						// Attach a blood fountain for this detached part
-						GameObject fountain = Instantiate(bloodFountainPrefab, 
-						                                  part.bloodFountainOrigin.position, 
-						                                  part.bloodFountainOrigin.rotation) as GameObject;
+					if (part.bloodFountainOrigin != null && 
+                        bloodFountainPrefab != null) {
 
-						fountain.transform.SetParent(this.cameraFollowTarget, false);
+						// Attach a blood fountain for
+                        // this detached part
+						GameObject fountain =  Instantiate(
+                            bloodFountainPrefab, 
+						    part.bloodFountainOrigin.position, 
+						    part.bloodFountainOrigin.rotation
+                        ) as GameObject;
+                            
+                        fountain.transform.SetParent(
+                            this.cameraFollowTarget, 
+                            false
+                        );
 					}
 				}
 
 				// Disconnect this object
-				foreach (Joint2D joint in part.GetComponentsInChildren<Joint2D>()) {
+                var allJoints = part.GetComponentsInChildren<Joint2D>();
+                foreach (Joint2D joint in allJoints) {
 					Destroy (joint);
 				}
 			}
@@ -146,7 +162,11 @@ public class Gnome : MonoBehaviour {
 		yield return new WaitForSeconds(delayBeforeReleasingGhost);
 
 		// Add the ghost		
-		Instantiate(ghostPrefab, transform.position, Quaternion.identity);
+		Instantiate(
+            ghostPrefab, 
+            transform.position, 
+            Quaternion.identity
+        );
 	}
 
 

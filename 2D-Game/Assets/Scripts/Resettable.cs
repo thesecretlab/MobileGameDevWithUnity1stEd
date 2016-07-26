@@ -13,7 +13,8 @@ public class Resettable : MonoBehaviour {
 
 	// Called by the GameManager when the game resets.
 	public void Reset() {
-		// Kicks off the event, which calls all of the connected methods.
+		// Kicks off the event, which calls all of the connected 
+        // methods.
 		onReset.Invoke();
 	}
 }

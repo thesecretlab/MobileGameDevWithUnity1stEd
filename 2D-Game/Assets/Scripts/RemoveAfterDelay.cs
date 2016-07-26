@@ -19,8 +19,8 @@ public class RemoveAfterDelay : MonoBehaviour {
 		yield return new WaitForSeconds(delay);
 		Destroy (gameObject);
 
-		// Don't say Destroy(this) - that just destroys this RemoveAfterDelay
-		// script.
+		// Don't say Destroy(this) - that just destroys this 
+        // RemoveAfterDelay script.
 	}
 }
 // END 2d_removeafterdelay

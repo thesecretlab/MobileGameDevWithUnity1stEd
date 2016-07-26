@@ -18,7 +18,8 @@ public class CameraFollow : MonoBehaviour {
 	// How quickly we should move towards the target.
 	public float followSpeed = 0.5f;
 
-	// After all objects have updated position, work out where this camera should be
+	// After all objects have updated position, work out where this camera 
+    // should be
 	void LateUpdate () {
 
 		// If we have a target...
@@ -28,7 +29,8 @@ public class CameraFollow : MonoBehaviour {
 			Vector3 newPosition = this.transform.position;
 
 			// Work out where this camera should be
-			newPosition.y = Mathf.Lerp (newPosition.y, target.position.y, followSpeed);
+			newPosition.y = Mathf.Lerp (newPosition.y, 
+target.position.y, followSpeed);
 
 			// Clamp this new location to within our limits
 			newPosition.y = Mathf.Min(newPosition.y, topLimit);
@@ -42,12 +44,15 @@ public class CameraFollow : MonoBehaviour {
 
 	}
 
-	// When selected in the editor, draw a line from the top limit to the bottom.
+	// When selected in the editor, draw a line from the top limit to the 
+    // bottom.
 	void OnDrawGizmosSelected() {
 		Gizmos.color = Color.yellow;
 
-		Vector3 topPoint = new Vector3(this.transform.position.x, topLimit, this.transform.position.z);
-		Vector3 bottomPoint = new Vector3(this.transform.position.x, bottomLimit, this.transform.position.z);
+		Vector3 topPoint = new Vector3(this.transform.position.x, 
+topLimit, this.transform.position.z);
+		Vector3 bottomPoint = new Vector3(this.transform.position.x, 
+bottomLimit, this.transform.position.z);
 
 		Gizmos.DrawLine(topPoint, bottomPoint);
 	}

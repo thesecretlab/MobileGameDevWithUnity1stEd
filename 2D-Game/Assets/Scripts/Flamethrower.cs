@@ -45,10 +45,12 @@ public class Flamethrower : MonoBehaviour {
 		// Wait for timeToStart seconds before starting to shoot
 		yield return new WaitForSeconds(timeToStart);
 
-		// Loop forever (it won't hang, due to the use of WaitForSeconds)
+		// Loop forever (it won't hang, due to the use of 
+        // WaitForSeconds)
 		while (true) {
 
-			// Swap sprites and then reset after timeToCoolDown seconds
+			// Swap sprites and then reset after timeToCoolDown 
+            // seconds
 			StartCoroutine("Cooldown");
 
 			// If we have a fireball, shoot one
@@ -60,19 +62,35 @@ public class Flamethrower : MonoBehaviour {
 					audio.PlayOneShot(fireballSound);
 				}
 
-				// Create the fireball at the emissionPoint's location, but with no rotation
-				var fireball = (GameObject)Instantiate(fireballPrefab, emissionPoint.position, Quaternion.identity);
+				// Create the fireball at the emissionPoint's 
+                // location, but with no rotation
+				var fireball = 
+                    (GameObject)Instantiate(
+                        fireballPrefab, 
+                        emissionPoint.position, 
+                        Quaternion.identity
+                    );
 
-				// Make the fireball's Mover component start moving in this object's rightward-pointing direction (the red arrow in Unity)
-				fireball.GetComponent<Mover>().direction = transform.right;
+				// Make the fireball's Mover component start 
+                // moving in this object's rightward-pointing 
+                // direction (the red arrow in Unity)
+				fireball.GetComponent<Mover>().direction =
+                    transform.right;
 
-				// Connect the fireball's Signal On Touch to the game manager
-				fireball.GetComponent<SignalOnTouch>().onTouch.AddListener(
-					delegate { 
-						// When the fireball touches the player, call FireTrapTouched to kill the gnome
-						GameManager.instance.FireTrapTouched(); 
-					}
-				);
+				// Connect the fireball's Signal On Touch to 
+                // the game manager
+				
+                fireball.GetComponent<SignalOnTouch>().
+                    onTouch.AddListener(
+    					delegate { 
+    						// When the fireball touches 
+                            // the player, call FireTrapTouched
+                            // to kill the gnome
+    						
+                            GameManager.instance.
+                                FireTrapTouched(); 
+    					}
+    				);
 			}
 
 			// Wait timeBetweenShots seconds to shoot again

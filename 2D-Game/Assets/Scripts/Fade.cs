@@ -18,13 +18,15 @@ public class Fade : MonoBehaviour {
 	// Trigged by the Reset system
 	public void FadeIn() {
 
-		// Make the Fade go full-alpha and then fade out over 0.5 seconds
+		// Make the Fade go full-alpha and then fade out over 0.5 
+        // seconds
 		SetAlpha(1.0f);
 		FadeTo(0.0f, 0.5f);
 
 	}
 
-	// Begins fading from current alpha to a target alpha, over 'time' seconds
+	// Begins fading from current alpha to a target alpha, over 'time' 
+    // seconds
 	public void FadeTo(float alpha, float time) {
 
 		// Work out our current alpha value

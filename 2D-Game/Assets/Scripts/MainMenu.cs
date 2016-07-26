@@ -24,9 +24,11 @@ public class MainMenu : MonoBehaviour {
 		loadingOverlay.gameObject.SetActive(false);
 
 		// Begin loading in the scene in the background...
-		sceneLoadingOperation = SceneManager.LoadSceneAsync(sceneToLoad);
+		sceneLoadingOperation = 
+SceneManager.LoadSceneAsync(sceneToLoad);
 
-		// ...but don't actually switch to the new scene until we're ready.
+		// ...but don't actually switch to the new scene until we're 
+        // ready.
 		sceneLoadingOperation.allowSceneActivation = false;
 
 
