@@ -43,7 +43,21 @@ public class GameManager : Singleton<GameManager> {
 
 	// Is the game currently playing?
 	public bool gameIsPlaying {get; private set;}
+    
+	// The game's Asteroid Spawner
+	public AsteroidSpawner asteroidSpawner;
 
+	// Keeps track of whether the game is paused or not.
+	public bool paused;
+
+    // BEGIN 3d_gamemanager_start
+	// Show the main menu when the game starts
+	void Start() {
+		ShowMainMenu();
+	}
+    // END 3d_gamemanager_start
+    
+    // BEGIN 3d_gamemanager_showui
 	// Shows a UI container, and hides all others.
 	void ShowUI(GameObject newUI) {
 
@@ -58,18 +72,9 @@ public class GameManager : Singleton<GameManager> {
 		// And then show the provided UI container.
 		newUI.SetActive(true);
 	}
-
-	// The game's Asteroid Spawner
-	public AsteroidSpawner asteroidSpawner;
-
-	// Keeps track of whether the game is paused or not.
-	public bool paused;
-
-	// Show the main menu when the game starts
-	void Start() {
-		ShowMainMenu();
-	}
-
+    // END 3d_gamemanager_showui
+    
+    // BEGIN 3d_gamemanager_showmain
 	public void ShowMainMenu() {
 		ShowUI(mainMenuUI);
 
@@ -79,7 +84,9 @@ public class GameManager : Singleton<GameManager> {
 		// Don't spawn asteroids either
 		asteroidSpawner.spawnAsteroids = false;
 	}
+    // END 3d_gamemanager_showmain
 
+    // BEGIN 3d_gamemanager_startgame
 	// Called by the New Game button being tapped
 	public void StartGame() {
 		// Show the in-game UI
@@ -121,8 +128,9 @@ public class GameManager : Singleton<GameManager> {
 		timer.StartClock();
 		// END 3d_gamemanager_timer
 	}
+    // END 3d_gamemanager_startgame
 
-
+    // BEGIN 3d_gamemanager_gameover
 	// Called by objects that end the game when they're destroyed
 	public void GameOver() {
 		// Show the game over UI
@@ -149,7 +157,9 @@ public class GameManager : Singleton<GameManager> {
 		// And remove all lingering asteroids from the game
 		asteroidSpawner.DestroyAllAsteroids();
 	}
+    // END 3d_gamemanager_gameover
 
+    // BEGIN 3d_gamemanager_setpaused
 	// Called when the Pause or Resume buttons are tapped
 	public void SetPaused(bool paused) {
 
@@ -166,6 +176,7 @@ public class GameManager : Singleton<GameManager> {
 			Time.timeScale = 1.0f;
 		}
 	}
+    // END 3d_gamemanager_setpaused
 
 	// BEGIN 3d_gamemanager_boundary
 	public void Update() {

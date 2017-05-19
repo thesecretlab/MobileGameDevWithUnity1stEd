@@ -7,8 +7,17 @@ using UnityEngine.UI;
 
 public class Indicator : MonoBehaviour {
 
+	// The object we're tracking.
+	public Transform target;
+	
+	// Measure the distance from 'target' to this transform.
+	public Transform showDistanceTo;
+
+	// The label that shows the distance we're measuring.
+	public Text distanceLabel;
+    
 	// How far we should be from the screen edges.
-	public int margin = 10;
+	public int margin = 50;
 
 	// Our image's tint colour.
 	public Color color {
@@ -18,26 +27,16 @@ public class Indicator : MonoBehaviour {
 		get {
 			return GetComponent<Image>().color;
 		}
-	}
-	
-	// The object we're tracking.
-	public Transform target;
-	
-	// Measure the distance from 'target' to this transform.
-	public Transform showDistanceTo;
+	}	
 
-	// The label that shows the distance we're measuring.
-	public Text distanceLabel;
-
-	IEnumerator Start() {
+    // Set up the indicator
+	void Start() {
 		// Hide the label; it will be re-enabled in 
 		// Update if we have a target
 		distanceLabel.enabled = false;
 
 		// On start, wait a frame before appearing to prevent visual glitches
 		GetComponent<Image>().enabled = false;
-		yield return new WaitForEndOfFrame();
-		GetComponent<Image>().enabled = true;
 
 	}
 
@@ -68,7 +67,9 @@ public class Indicator : MonoBehaviour {
 			// Don't show the label
 			distanceLabel.enabled = false;
 		}
-
+        
+		GetComponent<Image>().enabled = true;
+        
 		// Work out where in screen-space the object is
 		var viewportPoint = Camera.main.WorldToViewportPoint(target.position);
 
