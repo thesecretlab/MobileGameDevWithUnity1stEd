@@ -209,7 +209,7 @@ public class Rope : MonoBehaviour {
 			// The number of line renderer verticies = number of 
             // rope segments, plus a  point at the top for the 
             // rope anchor, plus a point at the bottom for the gnome
-            lineRenderer.numPositions = ropeSegments.Count + 2;
+            lineRenderer.positionCount = ropeSegments.Count + 2;
 			
 			// Top vertex is always at the rope's location.
 			lineRenderer.SetPosition(0, this.transform.position);
