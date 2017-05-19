@@ -1,4 +1,6 @@
-﻿// BEGIN unlit_shader
+﻿// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
+
+// BEGIN unlit_shader
 Shader "Custom/SimpleUnlitShader"
 {
     Properties
@@ -57,7 +59,7 @@ Shader "Custom/SimpleUnlitShader"
                 // Convert the vertex from world space to
                 // view space by multiplying it with a matrix
                 // provided by Unity. (This comes from UnityCG.cginc)
-                o.vertex = mul(UNITY_MATRIX_MVP, v.vertex);
+                o.vertex = UnityObjectToClipPos(v.vertex);
 
                 // Return it, passing it to the fragment shader
                 return o;
