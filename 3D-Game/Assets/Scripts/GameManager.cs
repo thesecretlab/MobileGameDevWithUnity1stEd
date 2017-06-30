@@ -112,8 +112,12 @@ public class GameManager : Singleton<GameManager> {
 
 		// And likewise for the station
 		currentSpaceStation = Instantiate(spaceStationPrefab);
-		currentSpaceStation.transform.position = spaceStationStartPosition.position;
-		currentSpaceStation.transform.rotation = spaceStationStartPosition.rotation;
+        
+		currentSpaceStation.transform.position = 
+            spaceStationStartPosition.position;
+        
+		currentSpaceStation.transform.rotation = 
+            spaceStationStartPosition.rotation;
 
 		// Make the follow script track the new ship
 		cameraFollow.target = currentShip.transform;

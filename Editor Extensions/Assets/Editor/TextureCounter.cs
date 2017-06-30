@@ -40,12 +40,12 @@ public class TextureCounter : EditorWindow {
 	// END editor_window_gui_textfield_backing_store
 
 	// BEGIN editor_window_gui_special_fields_backing_stores
-	private int intValue;
-	
+    private int intValue;
+
     private float floatValue;
-	
+
     private Vector2 vector2DValue;
-	
+
     private Vector3 vector3DValue;
 	// END editor_window_gui_special_fields_backing_stores
 
@@ -165,25 +165,31 @@ public class TextureCounter : EditorWindow {
 					// END editor_window_gui_textarea_delayed_textfield
 
 					// BEGIN editor_window_gui_special_fields
-					this.intValue = EditorGUILayout.IntField("Int", this.intValue);
-					
-                    this.floatValue = EditorGUILayout.FloatField("Float", this.floatValue);
-					
-                    this.vector2DValue = EditorGUILayout.Vector2Field("Vector 2D", this.vector2DValue);
-					
-                    this.vector3DValue = EditorGUILayout.Vector3Field("Vector 3D", this.vector3DValue);
+                    this.intValue = 
+                        EditorGUILayout.IntField("Int", this.intValue);
+
+                    this.floatValue = 
+                        EditorGUILayout.FloatField("Float", this.floatValue);
+
+                    this.vector2DValue = 
+                        EditorGUILayout.Vector2Field("Vector 2D", this.vector2DValue);
+
+                    this.vector3DValue = 
+                        EditorGUILayout.Vector3Field("Vector 3D", this.vector3DValue);
 					// END editor_window_gui_special_fields
 
 					// BEGIN editor_window_gui_sliders
 					var minIntValue = 0;
 					var maxIntValue = 10;
-					this.intValue = EditorGUILayout.IntSlider(this.intValue, minIntValue, maxIntValue);
+					this.intValue = EditorGUILayout.IntSlider(
+                        this.intValue, minIntValue, maxIntValue);
 					// END editor_window_gui_sliders
 
 					// BEGIN editor_window_gui_minmaxslider
 					var minLimit = 0;
 					var maxLimit = 10;
-					EditorGUILayout.MinMaxSlider(ref minFloatValue, ref maxFloatValue, minLimit, maxLimit);
+					EditorGUILayout.MinMaxSlider(
+                        ref minFloatValue, ref maxFloatValue, minLimit, maxLimit);
 					// END editor_window_gui_minmaxslider
 
 

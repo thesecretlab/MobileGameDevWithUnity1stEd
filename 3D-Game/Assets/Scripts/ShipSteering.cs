@@ -48,7 +48,8 @@ public class ShipSteering : MonoBehaviour {
 		// Combine our current orientation with a small amount of this
 		// "zero-roll" orientation; when this happens over multiple
 		// frames, the object will slowly level out to zero roll
-		transform.rotation = Quaternion.Slerp(transform.rotation, levelOrientation, levelDamping * Time.deltaTime);
+		transform.rotation = Quaternion.Slerp(transform.rotation, 
+            levelOrientation, levelDamping * Time.deltaTime);
 
 	}
 }

@@ -38,7 +38,8 @@ public class DamageTaking : MonoBehaviour {
 
 				// Create it at our current position and
 				// with our rotation.
-				Instantiate(destructionPrefab, transform.position, transform.rotation);
+				Instantiate(destructionPrefab, 
+                    transform.position, transform.rotation);
 			}
 
 			// BEGIN 3d_damagetaking_gamemanager
