@@ -23,7 +23,7 @@ After the acknowledgement line, include a copy of the license that appears below
 
 The MIT License (MIT)
 
-Copyright (c) 2015 Secret Lab Pty Ltd
+Copyright (c) Secret Lab Pty Ltd
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
