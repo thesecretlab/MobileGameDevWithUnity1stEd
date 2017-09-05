@@ -1,4 +1,6 @@
-# Mobile Game Dev With Unity, 1st. Edition
+# Mobile Game Development With Unity, 1st. Edition
+
+[![Mobile Game Development with Unity](https://static1.squarespace.com/static/529d23d2e4b0c7dd8c183826/t/59af21862994ca703cfba017/1504649649287/cover.png?format=200w)](https://www.secretlab.com.au/books/unity)
 
 Source code for <a href="http://secretlab.com.au">Secret Lab's</a> O'Reilly Media published book, <a href="http://shop.oreilly.com/product/0636920032359.do">Mobile Game Development with Unity</a> First Edition.
 
